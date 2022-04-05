@@ -92,7 +92,7 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
 | Eventos         | Início   | Fim      | Status |
 |-----------------|----------|----------|--------|
 | **Kick off**    | 18/08/21 | 18/08/21 |   ❌ Fora do Prazo  |
-| **Sprint 01**   | 19/08/21 | 19/09/21 |   ❌ Fora do Prazo  |
+| **Sprint 01**   | 25/03/22 | 14/04/22 |   ❌ Fora do Prazo  |
 | **Sprint 02**   | 20/09/21 | 10/10/21 |   ❌ Fora do Prazo  |
 | **Sprint 03**   | 18/10/21 | 07/11/21 |   ❌ Fora do Prazo  |
 | **Sprint 04**   | 08/11/21 | 28/11/21 |   ❌ Fora do Prazo  |
