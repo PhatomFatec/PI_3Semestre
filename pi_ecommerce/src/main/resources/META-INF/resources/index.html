@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <script src="main.js" defer></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <title>Cadastro de Produtos</title>
+</head>
+
+<body>    
+    <div class="menu-special">
+        <div class="menu-special-left">
+            <a href="file:///C:/Users/Fatec/Desktop/Front/index.html">Tela Inicial </a>
+        </div>
+
+        <div class="menu-special-right">
+            <a href="#">Cadastrar Produto</a>
+            <a href="#">Cadastrar Promoção</a>
+            <a href="#">Carrinho de Compras</a>
+        </div>
+    </div>
+
+    <header>
+        <a class="logo">MidAll</a>
+<!--         <div class="search">
+            <input type="text" placeholder="Buscar Produto">
+            <button class="search-button"> <i class="gg-search"></i></button>
+            </button>
+        </div> -->
+    </header>
+
+    <main>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Produto</button>
+
+        <table class="records">
+
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Quantidade</th>
+                    <th>Preço</th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td>Calça Jeans</td>
+                    <td>Calça Jeans | Tam:G | Cor: Preta</td>
+                    <td>Moda</td>
+                    <td>1</td>
+                    <td>140,90</td>
+                    <td>
+                        <button type="button" class="button green" onclick="funcaoEditar()" id="btn-Editar">editar</button>
+                        <button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover">excluir</button>
+                    </td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h2>Novo Produto</h2>
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                
+                <form class="modal-form">
+                    <input type="text" class="modal-field" id="modal-nome" placeholder="Nome">
+                    <input type="email" class="modal-field" id="modal-desc" placeholder="Descrição">
+                    <input type="email" class="modal-field" id="modal-categoria" placeholder="Categoria">
+                    <input type="text"  min="1" step="any" class="modal-field" id="modal-preco" placeholder="Preço">
+                </form>
+                
+                <footer class="modal-footer">
+                    <button class="button green" id="btn-Salvar" onclick="funcaoSalvar()">Cadastrar</button>
+                    <button class="button blue" id="btn-Cancelar" onclick="funcaoCancelar()">Cancelar</button>
+                </footer>
+                
+            </div>
+        </div>
+
+
+    </main>
+
+</body>
+</html>
