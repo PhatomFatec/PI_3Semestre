@@ -9,7 +9,7 @@ Cliente: <a href="https://www.midall.com.br/">MidAll</a>
 <p align="center"> 
  <img src="https://img.shields.io/badge/Status%3A-BUILDING-orange"/>
  <a href="https://www.java.com/pt-BR/"><img src="https://img.shields.io/badge/Language%3A-JAVA-red"/></a>
- <a href="https://www.midall.com.br/"><img src="https://img.shields.io/badge/Client%3A-NECTO%20SYSTEMS-blue"/></a>
+ <a href="https://www.midall.com.br/"><img src="https://img.shields.io/badge/Client%3A-MID%20ALL-blue"/></a>
  <a href="http://fatecsjc-prd.azurewebsites.net/"><img src="https://img.shields.io/badge/Institution%3A-FATEC-blueviolet"/></a>
 </p>
 
