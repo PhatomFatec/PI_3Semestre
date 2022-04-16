@@ -12,7 +12,7 @@ Instalação do [Java](https://docs.oracle.com/en/java/javase/11/install/install
 
 ## Como executar:
 
-1. Faça download e extraia o arquivo ZIP
+1. Após o download extraia o arquivo ZIP
 
 2. Abra o Eclipse 
 
