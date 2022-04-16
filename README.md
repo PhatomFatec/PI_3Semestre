@@ -83,6 +83,8 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
 <br>
 
 ## Executando o programa 
+Veja o passo a passo de como executar o programa clicando [aqui](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Instala%C3%A7%C3%A3o).
+ 
 
 
 <br>
