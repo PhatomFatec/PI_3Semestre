@@ -102,6 +102,14 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
 
 ## Equipe Phantom
 
+* **MASTER** - Igor Ribeiro Silva &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/igor-ribeiro-8571a6210/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/IgorRibeiro-S)
+
+* **PO** - Ludmila Mariana Chagas &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/ludmila-chagas-273548187/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/ludmila-chagas)
+
 * **DEV** - Felipe Faria Verderamis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/felipe-faria-verderamis-3b9b10202/)
 [<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/FelipeFariaVerde)
@@ -114,14 +122,14 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
 [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d" />](https://www.linkedin.com/in/gabriel-santos-87922b170/)
 [<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/gabrieljssantos)
 
-* **MASTER** - Igor Ribeiro Silva &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/igor-ribeiro-8571a6210/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/IgorRibeiro-S)
-
 * **DEV** - Lara Oliveira Leal &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
 [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/lara-leal-527b7020a/)
 [<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/lara-leal)
 
-* **PO** - Ludmila Mariana Chagas &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/ludmila-chagas-273548187/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/ludmila-chagas)
+* **DEV** - Isidro Augusto  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/isidro-augusto-4671661a4/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/Isidro013)
+
+* **DEV** - Lucas Monteiro  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/lucas-monteiro-56585117b/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/LucasMonteiiroo)
