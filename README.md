@@ -91,12 +91,11 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
 
 | Eventos         | Início   | Fim      | Status |
 |-----------------|----------|----------|--------|
-| **Kick off**    | 18/08/21 | 18/08/21 |   ❌ Fora do Prazo  |
-| **Sprint 01**   | 25/03/22 | 14/04/22 |   ❌ Fora do Prazo  |
-| **Sprint 02**   | 20/09/21 | 10/10/21 |   ❌ Fora do Prazo  |
-| **Sprint 03**   | 18/10/21 | 07/11/21 |   ❌ Fora do Prazo  |
-| **Sprint 04**   | 08/11/21 | 28/11/21 |   ❌ Fora do Prazo  |
-| **Apresentação final** | 29/11/21 | 05/12/21 |   ❌ Fora do Prazo  |
+| **Kick off**    | 14/03/22 | 18/03/22 |   ✔️ Realizado      |
+| **Sprint 01**   | 25/03/22 | 17/04/22 |   ✔️ Realizado      |
+| **Sprint 02**   | 20/04/22 | 15/05/22 |   ❌ Fora do Prazo  |
+| **Sprint 03**   | 16/05/22 | 05/06/22 |   ❌ Fora do Prazo  |
+| **Apresentação final** | 15/06/22     |   ❌ Fora do Prazo  |
 
 <br>
 
