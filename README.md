@@ -57,6 +57,8 @@ itens selecionados, valor unitário, valor total e desconto aplicado;
 
 ## Product Backlog
 
+Acesse nosso Product Backlog através do [Notion](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Instala%C3%A7%C3%A3o).
+
 <p align="center">
 </p>
 
