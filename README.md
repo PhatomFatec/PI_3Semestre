@@ -65,7 +65,7 @@ itens selecionados, valor unitário, valor total e desconto aplicado;
 ## Sprints
 Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja cada uma de nossas sprints realizadas ao longo do semestre: <br>
 
-- [ ] [Sprint 01](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint01/README.md) ❌
+- [ ] [Sprint 01](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint01/README.md) ✔️
  
 - [ ] [Sprint 02](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint02/README.md) ❌
  
