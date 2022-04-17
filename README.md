@@ -3,18 +3,18 @@ Projeto Integrador, Fatec Prof. Jessen Vidal - 2022. 3° Semestre
 Cliente: <a href="https://www.midall.com.br/">MidAll</a>
 
 <br><p align="center">
- <a href="https://www.midall.com.br/"><img src="https://static.wixstatic.com/media/456d95_16b15ab71cf54b9aa97150aaefefbbde~mv2.png/v1/fill/w_142,h_113,al_c,usm_0.66_1.00_0.01,enc_auto/Logo%2520MidAll_edited.png" width="110"/></a>
+ <a href="https://www.midall.com.br/"><img src="https://user-images.githubusercontent.com/80851038/163725778-498ec2e9-e8eb-45cf-a586-848e5bb1dd97.png" width="110"/></a>
 </p>
 
 <p align="center"> 
  <img src="https://img.shields.io/badge/Status%3A-BUILDING-orange"/>
  <a href="https://www.java.com/pt-BR/"><img src="https://img.shields.io/badge/Language%3A-JAVA-red"/></a>
- <a href="https://www.midall.com.br/"><img src="https://img.shields.io/badge/Client%3A-MID%20ALL-blue"/></a>
- <a href="http://fatecsjc-prd.azurewebsites.net/"><img src="https://img.shields.io/badge/Institution%3A-FATEC-blueviolet"/></a>
+ <a href="https://www.midall.com.br/"><img src="https://img.shields.io/badge/Client%3A-MidAll-purple"/></a>
+ <a href="http://fatecsjc-prd.azurewebsites.net/"><img src="https://img.shields.io/badge/Institution%3A-Fatec-blueviolet"/></a>
 </p>
 
 <p align="center">
- <a href="#executando-o-programa">Execução do Programa</a> |  <a href="#tecnologias-utilizadas">Tecnologias</a> |  <a href="#cronograma">Cronograma</a> 
+ <a href="#executando-o-programa">Executando o Programa</a> |  <a href="#tecnologias-utilizadas">Tecnologias</a> |  <a href="#cronograma">Cronograma</a> 
 |  <a href="#equipe-phantom">Equipe</a>
 </p>
 
@@ -57,17 +57,14 @@ itens selecionados, valor unitário, valor total e desconto aplicado;
 
 ## Product Backlog
 
-Acesse nosso Product Backlog através do [Notion](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Instala%C3%A7%C3%A3o).
-
-<p align="center">
-</p>
+Acesse o Product Backlog através do [Notion](https://www.notion.so/phantomfatec/Sprints-Overview-9e1d85549da7478498001b3fa060b829) e certifique-se de seguir as instruções descritas no site.
 
 <br>
 
 ## Sprints
 Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja cada uma de nossas sprints realizadas ao longo do semestre: <br>
 
-- [ ] [Sprint 01](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint01/README.md) ✔️
+- [x] [Sprint 01](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint01/README.md) ✔️
  
 - [ ] [Sprint 02](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint02/README.md) ❌
  
@@ -75,19 +72,26 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
   
 - [ ] [Sprint 04](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint04/README.md) ❌
  
- <br>
+<br>
 
 ## Tecnologias Utilizadas
 
 <p align="center">
+<img src="https://user-images.githubusercontent.com/80851038/163726876-0c234c59-af02-4914-bb9f-e90f370412c8.png" width="480"/><br>
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS">CSS</a> | 
+<a href="https://www.docker.com/">Docker</a> | 
+<a href="https://hibernate.org/">Hibernate</a> | 
+<a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML">HTML</a> | 
+<a href="https://www.java.com/pt-BR/">Java</a> | 
+<a href="https://www.javascript.com/">JavaScript</a> | 
+<a href="https://www.postgresql.org/">Postgres</a> | 
+<a href="https://quarkus.io/">Quarkus</a>
 </p>
  
 <br>
 
 ## Executando o programa 
-Veja o passo a passo de como executar o programa clicando [aqui](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Instala%C3%A7%C3%A3o).
- 
-
+Acesse o passo a passo de como executar o programa clicando [AQUI](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Instala%C3%A7%C3%A3o).
 
 <br>
 
@@ -106,33 +110,33 @@ Veja o passo a passo de como executar o programa clicando [aqui](https://github.
 ## Equipe Phantom
 
 * **MASTER** - Igor Ribeiro Silva &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/igor-ribeiro-8571a6210/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/IgorRibeiro-S)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/igor-ribeiro-8571a6210/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/IgorRibeiro-S)
 
 * **PO** - Ludmila Mariana Chagas &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/ludmila-chagas-273548187/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/ludmila-chagas)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/ludmila-chagas-273548187/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/ludmila-chagas)
 
 * **DEV** - Felipe Faria Verderamis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/felipe-faria-verderamis-3b9b10202/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/FelipeFariaVerde)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/felipe-faria-verderamis-3b9b10202/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/FelipeFariaVerde)
 
 * **DEV** - Lucas Guiraldelli da Silva &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/lucasguiraldelli/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/LucasGuiraldelli)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/lucasguiraldelli/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/LucasGuiraldelli)
 
 * **DEV** - Gabriel Jose Souza dos Santos &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d" />](https://www.linkedin.com/in/gabriel-santos-87922b170/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/gabrieljssantos)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060" />](https://www.linkedin.com/in/gabriel-santos-87922b170/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/gabrieljssantos)
 
 * **DEV** - Lara Oliveira Leal &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/lara-leal-527b7020a/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/lara-leal)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/lara-leal-527b7020a/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/lara-leal)
 
 * **DEV** - Isidro Augusto  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/isidro-augusto-4671661a4/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/Isidro013)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/isidro-augusto-4671661a4/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/Isidro013)
 
-* **DEV** - Lucas Monteiro  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=3d3d3d"/>](https://www.linkedin.com/in/lucas-monteiro-56585117b/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=3d3d3d"/>](https://github.com/LucasMonteiiroo)
+* **DEV** - Lucas Monteiro  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/lucas-monteiro-56585117b/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/LucasMonteiiroo)
