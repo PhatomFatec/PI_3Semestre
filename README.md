@@ -57,7 +57,7 @@ itens selecionados, valor unitário, valor total e desconto aplicado;
 
 ## Product Backlog
 
-Acesse o Product Backlog através do [Notion](https://www.notion.so/phantomfatec/Sprints-Overview-9e1d85549da7478498001b3fa060b829) e certifique-se de seguir as instruções descritas no site.
+Acesse o Product Backlog através do [Notion](https://phantomfatec.notion.site/phantomfatec/Product-Backlog-ff56da48d16b41cebd798a8e0cf435a6) e certifique-se de seguir as instruções descritas no site.
 
 <br>
 
