@@ -11,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import models.Carrinho;
+import models.CarrinhoDAO;
 import models.Produto;
 
 @Path("/carrinho")
@@ -18,7 +19,7 @@ import models.Produto;
 @Produces(MediaType.APPLICATION_JSON)
 
 public class CarrinhoResource {
-
+	
 	@GET
 	public List<Produto>searchAllProducts(){
 		return Produto.listAll();
@@ -26,12 +27,9 @@ public class CarrinhoResource {
 	
 	@POST
 	@Transactional
-	public void Escolher(Carrinho dto) {
-		Carrinho itens = new Carrinho();
-		itens.codPed = dto.codPed;
-		itens.quantPed = dto.quantPed;
-		itens.produto = dto.produto;
-		itens.persist();
+	public void persist(Carrinho dto) {
+		CarrinhoDAO c = new CarrinhoDAO();
+		c.Escolher(dto);
 	}
 		
 		
