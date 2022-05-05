@@ -11,6 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import models.Carrinho;
+import models.CarrinhoDAO;
 import models.Produto;
 import repositories.CarrinhoDAO;
 
