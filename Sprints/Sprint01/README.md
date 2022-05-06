@@ -28,7 +28,7 @@
 
 <br>
 
-## 🎲 Banco de Dados: Modelo Conceitual / Físico
+## 🎲 Banco de Dados: Modelo Conceitual / Lógico
 ![image](https://user-images.githubusercontent.com/80851038/167059281-c4ce4a75-78c2-420c-94e9-392ced76c657.png)
 
 <br>
