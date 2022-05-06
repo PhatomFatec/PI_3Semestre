@@ -30,7 +30,7 @@ A ideia é criar um mini motor de regras com uma interface onde as regras das pr
 
  - [Projeto](#descrição-do-projeto)
  - [Requisitos](#requisitos)
- - [Product Backlog](#product-backlog)  
+ - [Product Backlog e Kanban](#product-backlog-e-kanban)  
  - [Sprints](#sprints)
  - [Tecnologias](#tecnologias-utilizadas)
  - [Execução do Programa](#executando-o-programa)
@@ -56,9 +56,15 @@ itens selecionados, valor unitário, valor total e desconto aplicado;
 
 <br>
 
-## Product Backlog
+## Product Backlog e Kanban
 
-Acesse o Product Backlog através do [Notion](https://phantomfatec.notion.site/phantomfatec/Product-Backlog-ff56da48d16b41cebd798a8e0cf435a6) e certifique-se de seguir as instruções descritas no site.
+- [Product Backlog](https://phantomfatec.notion.site/phantomfatec/Product-Backlog-ff56da48d16b41cebd798a8e0cf435a6)
+- [Kanban](https://phantomfatec.notion.site/Sprints-Overview-9e1d85549da7478498001b3fa060b829)
+
+<p align="center"> 
+Acesse nosso <a href="https://phantomfatec.notion.site/phantomfatec/Product-Backlog-ff56da48d16b41cebd798a8e0cf435a6">Product Backlog</a> e nosso <a href="https://phantomfatec.notion.site/Sprints-Overview-9e1d85549da7478498001b3fa060b829">Kanban</a> através do Notion e certifique-se de seguir as instruções descritas no site. <br><br>
+<img src="https://user-images.githubusercontent.com/80851038/167056812-37c6e555-2363-464d-865f-91a876dcae9a.png" width="400"/>
+</p>
 
 <br>
 
@@ -67,7 +73,7 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
 
 - [x] [Sprint 01](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint01/README.md) ✔️
  
-- [ ] [Sprint 02](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint02/README.md) ❌
+- [ ] [Sprint 02](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint02/README.md) 🚧
  
 - [ ] [Sprint 03](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint03/README.md) ❌
   
@@ -102,7 +108,7 @@ Acesse o passo a passo de como executar o programa clicando [AQUI](https://githu
 |-----------------|----------|----------|--------|
 | **Kick off**    | 14/03/22 | 18/03/22 |   ✔️ Realizado      |
 | **Sprint 01**   | 25/03/22 | 17/04/22 |   ✔️ Realizado      |
-| **Sprint 02**   | 20/04/22 | 15/05/22 |   ❌ Fora do Prazo  |
+| **Sprint 02**   | 20/04/22 | 15/05/22 |   🚧 No Prazo  |
 | **Sprint 03**   | 16/05/22 | 05/06/22 |   ❌ Fora do Prazo  |
 | **Apresentação final** | 15/06/22 | 15/06/22 |   ❌ Fora do Prazo  |
 
@@ -110,35 +116,30 @@ Acesse o passo a passo de como executar o programa clicando [AQUI](https://githu
 
 ## Equipe Phantom
 
-* **MASTER** - Igor Ribeiro Silva &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/igor-ribeiro-8571a6210/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/IgorRibeiro-S)
+* **MASTER** - Igor Ribeiro Silva &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/igor-ribeiro-8571a6210/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/IgorRibeiro-S)
 
-* **PO** - Ludmila Mariana Chagas &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/ludmila-chagas-273548187/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/ludmila-chagas)
+* **PO** - Lucas Guiraldelli da Silva &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/lucasguiraldelli/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/LucasGuiraldelli)
 
 * **DEV** - Felipe Faria Verderamis &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/felipe-faria-verderamis-3b9b10202/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/FelipeFariaVerde)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/felipe-faria-verderamis-3b9b10202/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/FelipeFariaVerde)
 
-* **DEV** - Lucas Guiraldelli da Silva &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/lucasguiraldelli/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/LucasGuiraldelli)
-
-* **DEV** - Gabriel Jose Souza dos Santos &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060" />](https://www.linkedin.com/in/gabriel-santos-87922b170/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/gabrieljssantos)
+* **DEV** - Gabriel Jose Souza dos Santos &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black" />](https://www.linkedin.com/in/gabriel-santos-87922b170/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/gabrieljssantos)
 
 * **DEV** - Lara Oliveira Leal &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/lara-leal-527b7020a/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/lara-leal)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/lara-leal-527b7020a/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/lara-leal)
 
 * **DEV** - Isidro Augusto  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/isidro-augusto-4671661a4/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/Isidro013)
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/isidro-augusto-4671661a4/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/Isidro013)
 
 * **DEV** - Lucas Monteiro  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/lucas-monteiro-56585117b/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/LucasMonteiiroo)
->>>>>>> 82e75c8090b6587b2128ea5355051375712d4045
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/lucas-monteiro-56585117b/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/LucasMonteiiroo)
