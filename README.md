@@ -1,4 +1,3 @@
-
 # PI_MidAll
 Projeto Integrador, Fatec Prof. Jessen Vidal - 2022. 3° Semestre
 Cliente: <a href="https://www.midall.com.br/">MidAll</a>
@@ -146,5 +145,11 @@ Acesse o passo a passo de como executar o programa clicando [AQUI](https://githu
 [<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/Isidro013)
 
 * **DEV** - Lucas Monteiro  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<<<<<<< HEAD
 [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/lucas-monteiro-56585117b/)
 [<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/LucasMonteiiroo)
+=======
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=606060"/>](https://www.linkedin.com/in/lucas-monteiro-56585117b/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=606060"/>](https://github.com/LucasMonteiiroo)
+
+>>>>>>> 25031039ed6227d2eda83bbcb1c8809ec652c8f3
