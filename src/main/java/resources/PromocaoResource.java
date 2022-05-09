@@ -16,28 +16,29 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 
 import models.Produto;
-import services.ProdutoService;
+import models.Promocao;
+import services.PromocaoService;
 
-@Path("cadastroProduto")
+@Path("cadastroPromocao")
 @Consumes(value = MediaType.APPLICATION_JSON)
 @Produces(value = MediaType.APPLICATION_JSON)
-public class ProdutoResource {
+public class PromocaoResource {
 	
 	@Inject
-	private ProdutoService produtoService;
+	private PromocaoService promocaoService;
 	
 	@POST
-	public Response cadastrar(Produto produto) {
-		produtoService.cadastrar(produto);
+	public Response cadastrar(Promocao promocao) {
+		promocaoService.cadastrar(promocao);
 		return Response.status(Status.CREATED).build();
 
 	}
 	
 	@PUT
 	@Path("{id}")
-	public Response atualizar(@PathParam("id")Long id,Produto produto) {
-		produto.id = id;
-		produtoService.atualizar(produto, id);
+	public Response atualizar(@PathParam("id")Long id,Promocao promocao) {
+		promocao.id = id;
+		promocaoService.atualizar(promocao, id);
 		return Response.ok().build();
 		}
 	
@@ -50,7 +51,7 @@ public class ProdutoResource {
 	@DELETE
 	@Path("{id}")
 	public Response deletar(@PathParam("id")Long id) {
-		produtoService.deletar(id);
+		promocaoService.deletar(id);
 		return Response.ok().build();
 	}
 
