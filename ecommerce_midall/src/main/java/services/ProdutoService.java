@@ -22,15 +22,17 @@ public class ProdutoService {
 
 
 	
-	public Produto atualizar (Produto produto, Long id){
+	public Produto atualizar (Produto produto, Long id, String statusProd){
 		Optional <Produto> produtoBD = Produto.findByIdOptional(id);
 		if(produtoBD.isPresent()) {
 			Produto nomeProd = produtoBD.get();
 			nomeProd.descProd = produto.descProd;
 			nomeProd.valorProd = produto.valorProd;
-		}
+			nomeProd.statusProd = produto.statusProd;
+			}
 		return produto;
-		}
+			}
+	
 	
 	public void deletar(Long id) {
 		produtoRepository.deletar(id);

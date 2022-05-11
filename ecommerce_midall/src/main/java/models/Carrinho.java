@@ -8,10 +8,11 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 @Entity
 @Table(name="carrinho")
 public class Carrinho extends PanacheEntity{
-	public long codPed;
+	public Long codPed;
 	@ManyToOne
+	
 	public Produto produto;
-	public int quantPed;
+	public  Integer quantPed;
 	
 	public Carrinho() {
 	}

@@ -1,8 +1,11 @@
 package repositories;
 
+import java.util.Optional;
+
 import javax.enterprise.context.ApplicationScoped;
 
 import models.Carrinho;
+import models.Produto;
 
 @ApplicationScoped
 public class CarrinhoRepository {
@@ -13,4 +16,8 @@ public class CarrinhoRepository {
 		return p;
 	}
 
+
+	public Optional<Produto> consultar (Long codProd){
+		return Produto.findByIdOptional(codProd);
+}
 }
