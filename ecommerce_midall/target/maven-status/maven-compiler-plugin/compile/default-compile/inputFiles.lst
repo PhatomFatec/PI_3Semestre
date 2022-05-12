@@ -1,8 +1,14 @@
-C:\Users\IGOR\Documents\Projetos\API\PI_3Semestre\ecommerce_midall\src\main\java\resources\ProdutoResource.java
-C:\Users\IGOR\Documents\Projetos\API\PI_3Semestre\ecommerce_midall\src\main\java\models\CarrinhoDAO.java
-C:\Users\IGOR\Documents\Projetos\API\PI_3Semestre\ecommerce_midall\src\main\java\repositories\ProdutoRepository.java
-C:\Users\IGOR\Documents\Projetos\API\PI_3Semestre\ecommerce_midall\src\main\java\services\ProdutoService.java
-C:\Users\IGOR\Documents\Projetos\API\PI_3Semestre\ecommerce_midall\src\main\java\resources\CarrinhoResource.java
-C:\Users\IGOR\Documents\Projetos\API\PI_3Semestre\ecommerce_midall\src\main\java\models\Carrinho.java
-C:\Users\IGOR\Documents\Projetos\API\PI_3Semestre\ecommerce_midall\src\main\java\models\Produto.java
-C:\Users\IGOR\Documents\Projetos\API\PI_3Semestre\ecommerce_midall\src\main\java\repositories\CarrinhoDAO.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\repositories\ProdutoRepository.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\resources\ProdutoResource.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\services\PromocaoService.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\models\ProdutoDTO.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\repositories\CarrinhoRepository.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\resources\CarrinhoResource.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\models\Carrinho.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\models\Promocao.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\models\CarrinhoDTO.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\services\ProdutoService.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\resources\PromocaoResource.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\models\Produto.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\services\CarrinhoService.java
+C:\Users\Familia Leal\Desktop\Nova pasta\PI_3Semestre\ecommerce_midall\src\main\java\repositories\PromocaoRepository.java

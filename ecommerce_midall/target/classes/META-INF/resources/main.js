@@ -36,7 +36,7 @@ function funcaoSalvar() {
 					"codProd": codigoProduto,
 					"nomeProd": nomeProduto,
 					"descProd": descProduto,
-					"categoriaProd": categoriaProduto,
+					"categoria": categoriaProduto,
 					"valorProd": precoProduto
 				}
 			),
