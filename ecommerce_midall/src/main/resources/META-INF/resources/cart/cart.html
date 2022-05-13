@@ -2,77 +2,89 @@
 <html lang="pt-BR">
 
 <head>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/button.css">
-    <link rel="stylesheet" href="css/records.css">
-    <link rel="stylesheet" href="css/modal.css">
-	<script src="main.js" defer></script>
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-	<script type="text/javascript" src="FileSaver.js" defer=""></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <title>Carrinho de Compras</title>   
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/button.css">
+<link rel="stylesheet" href="css/records.css">
+<link rel="stylesheet" href="css/modal.css">
+<script src="main.js" defer></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="FileSaver.js" defer=""></script>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Carrinho de Compras</title>
 </head>
 
-<body>    
-    <div class="menu-special">
-        <div class="menu-special-left">
-            <a href=#></a>
-        </div>
+<body>
+	<div class="menu-special">
+		<div class="menu-special-left">
+			<a href=#></a>
+		</div>
 
-        <div class="menu-special-right">
-            <a href="https://github.com/PhatomFatec/PI_3Semestre">Github do Projeto</a>
-            <a href="https://github.com/PhatomFatec">Phantom</a>
-            <a href="https://www.midall.com.br/">Cliente MidAll</a>
-        </div>
-    </div>
+		<div class="menu-special-right">
+			<a href="https://github.com/PhatomFatec/PI_3Semestre">Github do
+				Projeto</a> <a href="https://github.com/PhatomFatec">Phantom</a> <a
+				href="https://www.midall.com.br/">Cliente MidAll</a>
+		</div>
+	</div>
 
-    <header>
-        <a class="logo">e</a>
-        
-        <div class="header-tracking">
-            <div class="header-tracking-center">
-                <a href="http://localhost:8080/index.html">Cadastrar Produto</a>
-                <a href="#">Cadastrar Promoção</a>
-                <a href="http://localhost:8080/cart/cart.html">Carrinho de Compras</a>
-            </div>
+	<header>
+		<a class="logo">e</a>
 
-            <div class="header-tracking-right">
-                <i class="material-icons"><a href="http://localhost:8080/">shopping_basket</a></i>
-                <i class="material-icons"><a href="http://localhost:8080/cart/cart.html">shopping_cart</a></i>
-                <i class="material-icons"><a>local_offer</a></i>
-            </div>
-        </div>
-    </header>
+		<div class="header-tracking">
+			<div class="header-tracking-center">
+				<a href="http://localhost:8080/index.html">Cadastrar Produto</a> <a
+					href="#">Cadastrar Promoção</a> <a
+					href="http://localhost:8080/cart/cart.html">Carrinho de Compras</a>
+			</div>
+
+			<div class="header-tracking-right">
+				<i class="material-icons"><a href="http://localhost:8080/">shopping_basket</a></i>
+				<i class="material-icons"><a
+					href="http://localhost:8080/cart/cart.html">shopping_cart</a></i> <i
+					class="material-icons"><a>local_offer</a></i>
+			</div>
+		</div>
+	</header>
 
 	<main>
-		<button type="button" class="button blue mobile" id="cadastrarCliente">Adicionar ao Carrinho</button>
+		<button type="button" class="button blue mobile" id="cadastrarCliente">Adicionar
+			ao Carrinho</button>
 
 		<table class="records">
 			<thead>
-                    <th>Código</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
-                    <th>Categoria</th>
-                    <th>Quantidade<button class="button atualizar" onclick="funcaoAtualizar()"><i class="material-icons">refresh</i></button> </th>
-                    <th>Preço</th>
-					<th>Excluir</th>
-                <!-- </tr> -->
-            </thead>
+				<th>Código</th>
+				<th>Nome</th>
+				<th>Descrição</th>
+				<th>Categoria</th>
+				<th>Quantidade
+					<button class="button atualizar" onclick="funcaoAtualizar()">
+						<i class="material-icons">refresh</i>
+					</button>
+				</th>
+				<th>Preço</th>
+				<th>Excluir</th>
+				<!-- </tr> -->
+			</thead>
 
-			<tbody> <!--Produto Exemplo 1-->
-                <tr>
-                    <td><span id="colunaCodigo"></span></td>
-                    <td><span id="colunaNome"></span></td>
-                    <td><span id="colunaDescricao"></span></td>
-                    <td><span id="colunaCategoria"></span></td>
-					<td><input class="modal-field" type="number" id="colunaQuantidade"  step="1" min="0" max="100"></td>
-                    <td><span id="colunaPreco"></span></td>
-                    <td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover"><i class="material-icons">close</i></button></td>
-                </tr>
-            </tbody>
+			<tbody>
+				<!--Produto Exemplo 1-->
+				<tr>
+					<td><span id="colunaCodigo"></span></td>
+					<td><span id="colunaNome"></span></td>
+					<td><span id="colunaDescricao"></span></td>
+					<td><span id="colunaCategoria"></span></td>
+					<td><input class="modal-field" type="number"
+						id="colunaQuantidade" step="1" min="0" max="100"></td>
+					<td><span id="colunaPreco"></span></td>
+					<td><button type="button" class="button red"
+							onclick="funcaoRemover()" id="btn-Remover">
+							<i class="material-icons">close</i>
+						</button></td>
+				</tr>
+			</tbody>
 
 		</table>
 
@@ -80,64 +92,79 @@
 			<div class="container">
 				<div class="heading">
 					<h2>Pagamento</h2>
-					<p>Fique atento aos descontos.</p><br>
+					<p>Fique atento aos descontos.</p>
+					<br>
 				</div>
-					<div class="total_area">
-						<ul>
-							<li>Total sem desconto <span id="span-precoBruto"></span></li>
-							<li>Desconto <span id="span-precoDesconto"></span></li>
-							<li class="precoTotal">Total <span id="span-precoTotal"></span></li>
-						</ul>
-						<button class="button blue mobile" onclick="funcaoFinalizarCompra()">Finalizar Comprar</button>
-					</div>
+				<div class="total_area">
+					<ul>
+						<li>Total sem desconto <span id="span-precoBruto"></span></li>
+						<li>Desconto <span id="span-precoDesconto"></span></li>
+						<li class="precoTotal">Total <span id="span-precoTotal"></span></li>
+					</ul>
+					<button class="button blue mobile"
+						onclick="funcaoFinalizarCompra()">Finalizar Comprar</button>
+				</div>
 			</div>
-		</section><!--/#do_action-->
+		</section>
+		<!--/#do_action-->
 
 		<div class="modal" id="modal">
-            <div class="modal-content">
-                <header class="modal-header">
-                    <h2></h2>
-                    <span class="modal-close" id="modalClose">&#10006;</span>
-                </header>
-                
-                <div class="modal-th">
-                    <table>
-                        
-                        <tr>
-                            
-                            <td><b>Código: </b><span id="span-codigo"></span></td>
-                        </tr>
-                        <tr>
-                            <td><b>Nome: </b><span id="span-nome"></span></td>
-                        </tr>
-                        <tr> 
-                            <td><b>Descrição: </b><span id="span-descricao"></span></td>
-                        </tr>
-                        <tr>
-                            <td><b>Categoria: </b><span id="span-categoria"></span></td>
-                        </tr>
-                        <tr>
-                            <td><b>Quantidade: </b><span id="span-quantidade"></span></td>
-                        </tr>
-                        <tr>
-                            <td><b>Preço: </b><span id="span-preco"></span></td>
-                        </tr>
-                        
-                        
-                    </table>
-                </div>
-                
-                
-                
-                <footer class="modal-footer">
+			<div class="modal-content">
+				<header class="modal-header">
+					<h2></h2>
+					<span class="modal-close" id="modalClose">&#10006;</span>
+				</header>
 
-                         <button class="button listar" onclick="funcaoListarGET()">Listar</button>     
+				<div class="modal-th">
+					<table>
 
-                    <button class="button blue" id="btn-Salvar" onclick="funcaoSalvar()">Adicionar!</button>
+						<tr>
+							<th><b>Nome: </b><span id="span-nome"></span>&nbsp;</th>
+							<th><b>Categoria: </b><span id="span-categoria"></span>&nbsp;</th>
+							<th><b>Preço: </b><span id="span-preco"></span></th>
 
-                </footer>
-            </div>
-        </div>
+						</tr>
+						<tr>
+							<th><b>Nome: </b><span id="span-nome1"></span>&nbsp;</th>
+							<th><b>Categoria: </b><span id="span-categoria1"></span>&nbsp;</th>
+							<th><b>Preço: </b><span id="span-preco1"></span></th>
+
+						</tr>
+						<tr>
+							<th><b>Nome: </b><span id="span-nome2"></span>&nbsp;</th>
+							<th><b>Categoria: </b><span id="span-categoria2"></span>&nbsp;</th>
+							<th><b>Preço: </b><span id="span-preco2"></span></th>
+
+						</tr>
+						<tr>
+							<th><b>Nome: </b><span id="span-nome3"></span>&nbsp;</th>
+							<th><b>Categoria: </b><span id="span-categoria3"></span>&nbsp;</th>
+							<th><b>Preço: </b><span id="span-preco3"></span></th>
+
+						</tr>
+						<tr>
+							<th><b>Nome: </b><span id="span-nome4"></span>&nbsp;</th>
+							<th><b>Categoria: </b><span id="span-categoria4"></span>&nbsp;</th>
+							<th><b>Preço: </b><span id="span-preco4"></span></th>
+
+						</tr>
+
+
+					</table>
+				</div>
+
+
+
+				<footer class="modal-footer">
+
+					<button class="button listar" onclick="listarProduto()">Listar</button>
+
+					<button class="button blue" id="btn-Salvar"
+						onclick="funcaoSalvar()">Adicionar!</button>
+
+				</footer>
+			</div>
+		</div>
 	</main>
 </body>
 </html>

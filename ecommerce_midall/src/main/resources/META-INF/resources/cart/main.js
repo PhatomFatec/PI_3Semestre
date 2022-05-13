@@ -26,55 +26,45 @@ function funcaoSalvar() {
 	document.getElementById('colunaCategoria').innerText = "Moda"
 	document.getElementById('colunaPreco').innerText = "R$79.00"
 	document.getElementById('colunaQuantidade').value = "1"
-	
+
 
 	document.getElementById('span-precoBruto').innerText = "R$79.00"
 	document.getElementById('span-precoDesconto').innerText = "R$10.00"
 	document.getElementById('span-precoTotal').innerText = "R$69.00"
 }
 
+function listarProduto() {
 
-function funcaoListarGET() {
-	
+	$.ajax({
+		type: "GET",
+		url: "http://localhost:8080/carrinho",
+		data: 'teste',
+		cache: false,
+		success: function(data)  {
+			console.log('Get Realizado!')
+			console.log(data)
 
-	document.getElementById('span-codigo').innerText = "001002003"
-	document.getElementById('span-nome').innerText = "Calça Jeans"
-	document.getElementById('span-descricao').innerText = "Tamanho M | Cor: Preta "
-	document.getElementById('span-categoria').innerText = "Moda"
-	document.getElementById('span-quantidade').innerText = "1"
-	document.getElementById('span-preco').innerText = "R$79.00"
-	
-	
+			document.getElementById('span-nome').innerText = data[0]['nomeProd']
+			document.getElementById('span-categoria').innerText = data[0]['categoria']
+			document.getElementById('span-preco').innerText = "R$" + data[0]['valorProd']
 
+			document.getElementById('span-nome1').innerText = data[1]['nomeProd']
+			document.getElementById('span-categoria1').innerText = data[1]['categoria']
+			document.getElementById('span-preco1').innerText = "R$" + data[1]['valorProd']
+			
+			document.getElementById('span-nome2').innerText = data[2]['nomeProd']
+			document.getElementById('span-categoria2').innerText = data[2]['categoria']
+			document.getElementById('span-preco2').innerText = "R$" + data[2]['valorProd']
 
+			document.getElementById('span-nome3').innerText = data[3]['nomeProd']
+			document.getElementById('span-categoria3').innerText = data[3]['categoria']
+			document.getElementById('span-preco3').innerText = "R$" + data[3]['valorProd']
 
-/* 		$(document).ready(function() {
+			document.getElementById('span-nome4').innerText = data[4]['nomeProd']
+			document.getElementById('span-categoria4').innerText = data[4]['categoria']
+			document.getElementById('span-preco4').innerText = "R$" + data[4]['valorProd']
 
-		$.ajax({
-			url: "http://localhost:8080/cadastroProduto",
-			type: 'GET',
-			headers: {
-				Accept: 'application/json;charset=utf-8',
-				'Content-Type': 'application/json'
-			},
-			dataType: 'json',
-		sucess: function (resposta) {
-			console.log(resposta)
-			return resposta
 		}
-		});
-		console.log("Função Realizada!")
-	}); 
-	
-	let blob = new Blob([resposta],
-	{
-		type: "text/plain;charset-utf-8"
+
 	});
-	
-	saveAs(blob, "text" + ".txt"); */
-
-}; 
-
-function funcaoFinalizarCompra() {
-	alert(`Compra foi realizada com Sucesso!!`)
 }
