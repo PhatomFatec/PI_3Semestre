@@ -11,7 +11,9 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/records.css">
     <link rel="stylesheet" href="css/modal.css">
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>  
+    <script src="main.js" defer></script>
+    
 </head>
 
 <body>
@@ -134,63 +136,7 @@
         <input type="number" id="quantidade-minima"> <br>
         -->
 
-        <script>
-
-            var listarProdutos = function() {
-                
-                var select = document.getElementById("lstProduto");
-        
-                var opcaoTexto = select.options[select.selectedIndex].text;
-                var opcaoValor = select.options[select.selectedIndex].value;
-        
-                console.log(opcaoValor); 
-        
-        
-                if (opcaoValor == 'produto') {
-                    document.getElementById('btn-selected-listar').innerHTML=' Produto:';
-                    var select = document.getElementById("optionSelected");
-                    select.options.length = 0;
-                    var options = ["Produto - 1", "Produto - 2", "Produto - 3", "Produto - 4", "Produto - 5"];
-        
-                    for(var i = 0; i < options.length; i++) {
-                        var opt = options[i];
-                        var el = document.createElement("option");
-                        el.textContent = opt;
-                        el.value = opt;
-                        select.appendChild(el);
-                    } 
-        
-                } else{
-                    document.getElementById('btn-selected-listar').innerHTML=' Categoria:';
-                    var select = document.getElementById("optionSelected");
-                    select.options.length = 0;
-                    var options = ["Categoria - 1", "Categoria - 2", "Categoria - 3", "Categoria - 4", "Categoria - 5"];
-        
-                    for(var i = 0; i < options.length; i++) {
-                        var opt = options[i];
-                        var el = document.createElement("option");
-                        el.textContent = opt;
-                        el.value = opt;
-                        select.appendChild(el);
-                    } 
-                }      
-            }
-        
-
-            var cadastrarPromocao = function() {
-                var porcentagemPromocao = document.getElementById("porcentagem-promocao");
-                var nomePromocao = document.getElementById("nome-promocao").value;
-                //var quantidadeMinima = document.getElementById("quantidade-minima").value;
-        
-                var valorPorcentagem = porcentagemPromocao.options[porcentagemPromocao.selectedIndex].value;
-
-                console.log(valorPorcentagem); 
-                console.log(nomePromocao); 
-                //console.log(quantidadeMinima); 
-            }
-
-        
-        </script>
+            
     </main>
 
 </body>
