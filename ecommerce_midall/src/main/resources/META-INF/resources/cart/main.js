@@ -28,22 +28,15 @@ function funcaoSalvar() {
 			console.log(data)
 			var items = [];
 
-             $.each(data, function(i){
+			$.each(data, function(i) {
 
 
-                items.push("<tr><td><span" + this.nomeProd + "></span></td>" + "<tr><td><span" + this.codProd + "></span></td></tr>");
-            });
-            $("#cleiton").append(items);
-            
-            
-			document.getElementById('colunaNome').innerText = data[0]['nomeProd']
-			document.getElementById('colunaCodigo').innerText = data[0]['codProd']
-			document.getElementById('colunaDescricao').innerText = data[0]['descProd']
-			document.getElementById('colunaCategoria').innerText = data[0]['categoria']
-			document.getElementById('colunaPreco').innerText = "R$ " + data[0]['valorProd']
-			//document.getElementById('colunaQuantidade').value = "1"
+				items.push(`<tr><td><span>${this.codProd} </td></span> <td><span> ${this.nomeProd} </td></span> <td><span> ${this.descProd} </td></span> <td><span> ${this.categoria} </td></span> <td><input class="modal-field" type="number" step="1" min="1" max="100"></td></span><td><span>R$ ${this.valorProd}  </td></span> <td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover"><i class="material-icons">close</i></button></td></tr> `);
+			});
+			$("#cleiton").append(items);
 
-	
+
+
 			document.getElementById('span-precoBruto').innerText = "R$79.00"
 			document.getElementById('span-precoDesconto').innerText = "R$10.00"
 			document.getElementById('span-precoTotal').innerText = "R$69.00"
@@ -60,16 +53,16 @@ function listarProduto() {
 		success: function(data) {
 			console.log('Get Realizado!')
 			console.log(data)
-			
+
 			var items = [];
 
-             $.each(data, function(i){
+			$.each(data, function(i) {
 
 
-                items.push("<tr><th><b> Nome: " + this.nomeProd + "</span>&nbsp;</th>" + "<tr><th><b> Categoria: " + this.categoria + "</span>&nbsp;</th>" +"<tr><th><b> Preço: R$" + this.valorProd + "</span>&nbsp;</th></tr></b>");
-            });
-            $("#douglas").append(items);
-           
+				items.push("<tr><th><b> Nome: " + this.nomeProd + "</span>&nbsp;</th>" + "<tr><th><b> Categoria: " + this.categoria + "</span>&nbsp;</th>" + "<tr><th><b> Preço: R$" + this.valorProd + "</span>&nbsp;</th></tr></b>");
+			});
+			$("#douglas").append(items);
+
 		}
 
 	});
@@ -84,14 +77,22 @@ function funcaoAtualizar() {
 		success: function(data) {
 			console.log('Get Realizado!')
 			console.log(data)
+
+			var items = [];
+			$.each(data, function(i) {
+
+
+				items.push(document.getElementById('colunaQuantidade').value[data]);
+			});
+			console.log(items)
 			let quantidade = parseInt(document.getElementById('colunaQuantidade').value)
+			console.log(quantidade)
 			let valorPreco = document.getElementById('colunaPreco').innerHTML
+			console.log(valorPreco)
 			valorPreco = valorPreco.replace('R$', '')
 			valorPreco = parseInt(valorPreco)
 
 			let precoTotal = (quantidade * valorPreco)
-			console.log(precoTotal)
-			console.log(typeof (precoTotal))
 			document.getElementById('colunaPreco').innerText = "R$ " + precoTotal
 
 		}
