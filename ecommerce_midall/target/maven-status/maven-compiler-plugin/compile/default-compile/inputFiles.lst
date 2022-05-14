@@ -1,14 +1,15 @@
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\services\CarrinhoService.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\repositories\ProdutoRepository.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\models\Promocao.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\resources\PromocaoResource.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\models\CarrinhoDTO.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\models\ProdutoDTO.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\repositories\PromocaoRepository.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\services\ProdutoService.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\models\Produto.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\resources\ProdutoResource.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\models\Carrinho.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\services\PromocaoService.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\resources\CarrinhoResource.java
-C:\Users\lucas\Desktop\API\ecommerce_midall\src\main\java\repositories\CarrinhoRepository.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\services\CarrinhoService.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\models\ProdutoDTO.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\models\HistoricoVendas.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\models\Produto.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\models\CarrinhoDTO.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\services\ProdutoService.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\services\PromocaoService.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\repositories\CarrinhoRepository.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\resources\ProdutoResource.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\repositories\PromocaoRepository.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\repositories\ProdutoRepository.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\resources\CarrinhoResource.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\resources\PromocaoResource.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\models\Carrinho.java
+C:\Users\Gabriel - PC\Documents\Faculdade\API\Novo\PI_3Semestre\ecommerce_midall\src\main\java\models\Promocao.java
