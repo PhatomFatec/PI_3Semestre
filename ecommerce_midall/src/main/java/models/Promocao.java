@@ -5,7 +5,7 @@ import javax.persistence.Table;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 @Entity
-@Table(name="promo")
+@Table(name="promocao")
 public class Promocao extends PanacheEntity{
 	
 	public Promocao() {
@@ -13,24 +13,19 @@ public class Promocao extends PanacheEntity{
 	}
 	
 
-	public Promocao(Long codPromo, String nomePromo, String porcentPromo) {
-		super();
-		this.codPromo = codPromo;
-		this.nomePromo = nomePromo;
-		this.porcentPromo = porcentPromo;
-	}
-
-	public Long codPromo;
 	public String nomePromo;
+	public String opcaoPromo;
 	public String porcentPromo;
 	
 	
-	public Long getCodPromo() {
-		return codPromo;
-	}
-	
-	public void setCodPromo(Long codPromo) {
-		this.codPromo = codPromo;
+
+	public Promocao(String nomePromo, String opcaoPromo, String porcentPromo) {
+		super();
+		//this.codPromo = codPromo;
+		this.nomePromo = nomePromo;
+		this.opcaoPromo = opcaoPromo;
+		this.porcentPromo = porcentPromo;
+		 
 	}
 
 
@@ -39,9 +34,27 @@ public class Promocao extends PanacheEntity{
 	}
 
 
+
+
 	public void setNomePromo(String nomePromo) {
 		this.nomePromo = nomePromo;
 	}
+
+
+
+
+	public String getOpcaoPromo() {
+		return opcaoPromo;
+	}
+
+
+
+
+	public void setOpcaoPromo(String opcaoPromo) {
+		this.opcaoPromo = opcaoPromo;
+	}
+
+
 
 
 	public String getPorcentPromo() {
@@ -49,12 +62,12 @@ public class Promocao extends PanacheEntity{
 	}
 
 
+
+
 	public void setPorcentPromo(String porcentPromo) {
 		this.porcentPromo = porcentPromo;
 	}
-	
-	
-	
+		
 }
 
 	

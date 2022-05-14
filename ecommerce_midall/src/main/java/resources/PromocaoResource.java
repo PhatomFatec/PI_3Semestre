@@ -44,7 +44,7 @@ public class PromocaoResource {
 	
 	
 	@GET
-	public List<Produto>searchAllProducts(){
+	public List<Promocao>searchAllProducts(){
 		return Produto.listAll();
 	}
 	
