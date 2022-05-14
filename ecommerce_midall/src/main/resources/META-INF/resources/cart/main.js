@@ -31,7 +31,7 @@ function funcaoSalvar() {
 			$.each(data, function(i) {
 
 
-				items.push(`<tr><td><span>${this.codProd} </td></span> <td><span> ${this.nomeProd} </td></span> <td><span> ${this.descProd} </td></span> <td><span> ${this.categoria} </td></span> <td><input class="modal-field" type="number" step="1" min="1" max="100"></td></span><td><span>R$ ${this.valorProd}  </td></span> <td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover"><i class="material-icons">close</i></button></td></tr> `);
+				items.push(`<tr><td><span>${this.codProd} </td></span> <td><span> ${this.nomeProd} </td></span> <td><span> ${this.descProd} </td></span> <td><span> ${this.categoria} </td></span> <td><input class="modal-field" type="number" step="1" min="1" max="100"></td></span> <td><span>R$ ${this.valorProd}  </td></span> <td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover"><i class="material-icons">close</i></button></td></tr> `);
 			});
 			$("#cleiton").append(items);
 
@@ -80,15 +80,13 @@ function funcaoAtualizar() {
 
 			var items = [];
 			$.each(data, function(i) {
-
-
-				items.push(document.getElementById('colunaQuantidade').value);
+				items.push(`<td><span>R$ ${this.valorProd}  </td></span>`);
+				console.log(items)
+				
 			});
-			console.log(items)
+			
 			let quantidade = parseInt(document.getElementById('colunaQuantidade').value)
-			console.log(quantidade)
 			let valorPreco = document.getElementById('colunaPreco').innerHTML
-			console.log(valorPreco)
 			valorPreco = valorPreco.replace('R$', '')
 			valorPreco = parseInt(valorPreco)
 
