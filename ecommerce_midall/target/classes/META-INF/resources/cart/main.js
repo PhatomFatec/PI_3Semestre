@@ -98,3 +98,43 @@ function funcaoAtualizar() {
 		}
 	});
 }
+
+
+
+function finalizarCompra(){
+	
+	
+    let codigoVenda = document.getElementById("colunaCodigo");
+    let nomeVenda = document.getElementById("colunaNome");
+	let descVenda = document.getElementById("colunaDescricao");
+	let catVenda = document.getElementById("colunaCategoria");
+	let quantVenda = document.getElementById("colunaQuantidade");
+	let valorVenda = document.getElementById("colunaPreco");
+    
+    
+ 	$(document).ready(function() {
+
+		$.ajax({
+			url: "http://localhost:8080/cadastroPromocao",
+			async: false,
+			data: JSON.stringify(
+				{
+					"id": 0,
+					"nomeVenda": codigoVenda,
+					"descVenda": nomeVenda,
+					"catVenda": catVenda,
+					"quantVenda": quantVenda,
+					"valorVenda": valorVenda,
+				}
+			),
+			type: 'POST',
+			headers: {
+				Accept: 'application/json;charset=utf-8',
+				'Content-Type': 'application/json'
+			},
+			dataType: 'json'
+		});
+		console.log("Inserção Realizada!")
+	}); 
+
+}

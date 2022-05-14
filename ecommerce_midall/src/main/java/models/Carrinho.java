@@ -12,7 +12,7 @@ public class Carrinho extends PanacheEntity{
 	@ManyToOne
 	
 	public Produto produto;
-	public  Integer quantPed;
+	public Integer quantPed;
 	
 	public Carrinho() {
 	}
