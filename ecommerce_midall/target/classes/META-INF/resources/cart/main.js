@@ -82,7 +82,7 @@ function funcaoAtualizar() {
 			$.each(data, function(i) {
 
 
-				items.push(document.getElementById('colunaQuantidade').value[data]);
+				items.push(document.getElementById('colunaQuantidade').value);
 			});
 			console.log(items)
 			let quantidade = parseInt(document.getElementById('colunaQuantidade').value)
