@@ -35,7 +35,7 @@ Instalação do [Java](https://docs.oracle.com/en/java/javase/11/install/install
 (3) - Senha do postgreSQL.
 ```
 
-<img src="https://media.discordapp.net/attachments/913534866686103573/965011700296319036/banco.png" width="500"/>
+<img src="https://user-images.githubusercontent.com/80851038/168490293-ba904397-9f2f-42eb-bc24-3bff90e8d978.png" width="500"/>
 
 **Obs:** Comentar a linha (5) após a primeira execução. 
 
