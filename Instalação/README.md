@@ -37,7 +37,7 @@ Instalação do [Java](https://docs.oracle.com/en/java/javase/11/install/install
 
 <img src="https://media.discordapp.net/attachments/913534866686103573/965011700296319036/banco.png" width="500"/>
 
-**Obs:** Os demais itens não exigem alteração. 
+**Obs:** Comentar a linha (5) após a primeira execução. 
 
 11. Após salvar as alterações feitas clique com o segundo botão sobre a pasta do projeto.
 
@@ -56,3 +56,5 @@ Instalação do [Java](https://docs.oracle.com/en/java/javase/11/install/install
     http://localhost:8080/
 
     http://localhost:8080/cart/cart.html 
+    
+    http://localhost:8080/sale/sale.html
