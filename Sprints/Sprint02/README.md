@@ -43,7 +43,7 @@
 <br>
 
 ## 📷 Apresentação da Sprint
-[![FATEC - PI // 3° Semestre // Sprint 1](https://img.youtube.com/vi/DcT-e53yUGc/0.jpg)](https://youtu.be/DcT-e53yUGc "FATEC - PI // 3° Semestre // Sprint 1")
+[![FATEC - PI // 3° Semestre // Sprint 2](https://img.youtube.com/vi/k-WNjqqdKys/0.jpg)](https://youtu.be/k-WNjqqdKys "FATEC - PI // 3° Semestre // Sprint 2")
 
 <br>
 
