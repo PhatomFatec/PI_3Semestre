@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="css/button.css">
+<link rel="stylesheet" href="css/records.css">
+<link rel="stylesheet" href="css/modal.css">
+<script src="main.js" defer></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript" src="FileSaver.js" defer=""></script>
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<title>Carrinho de Compras</title>
+</head>
+
+<body>
+	<div class="menu-special">
+		<div class="menu-special-left">
+			<a href=#></a>
+		</div>
+
+		<div class="menu-special-right">
+			<a href="https://github.com/PhatomFatec/PI_3Semestre">Github do
+				Projeto</a> <a href="https://github.com/PhatomFatec">Phantom</a> <a
+				href="https://www.midall.com.br/">Cliente MidAll</a>
+		</div>
+	</div>
+
+	<header>
+		<a class="logo">e</a>
+
+		<div class="header-tracking">
+			<div class="header-tracking-center">
+				<a href="http://localhost:8080/index.html">Cadastrar Produto</a> <a
+					href="http://localhost:8080/sale/sale.html">Cadastrar Promoção</a> <a
+					href="http://localhost:8080/cart/cart.html">Carrinho de Compras</a>
+			</div>
+
+			<div class="header-tracking-right">
+				<i class="material-icons"><a href="http://localhost:8080/">shopping_basket</a></i>
+				<i class="material-icons"><a
+					href="http://localhost:8080/cart/cart.html">shopping_cart</a></i> <i
+					class="material-icons"><a>local_offer</a></i>
+			</div>
+		</div>
+	</header>
+
+	<main>
+		<button type="button" class="button blue mobile" id="cadastrarCliente">Adicionar
+			ao Carrinho</button>
+
+		<table class="records">
+			<thead>
+
+
+
+				<th>Código</th>
+				<th>Nome</th>
+				<th>Descrição</th>
+				<th>Categoria</th>
+				<th>Quantidade
+					<button class="button atualizar" onclick="funcaoAtualizar()">
+						<i class="material-icons">refresh</i>
+					</button>
+				</th>
+				<th>Preço</th>
+				<th>Excluir</th>
+				<!-- </tr> -->
+			</thead>
+			
+			<tbody id="cleiton">
+			</tbody>
+			
+
+
+		</table>
+
+		<section id="payment">
+			<div class="container">
+				<div class="heading">
+					<h2>Pagamento</h2>
+					<p>Fique atento aos descontos.</p>
+					<br>
+				</div>
+				<div class="total_area">
+					<ul>
+						<li>Total sem desconto <span id="span-precoBruto"></span></li>
+						<li>Desconto <span id="span-precoDesconto"></span></li>
+						<li class="precoTotal">Total <span id="span-precoTotal"></span></li>
+					</ul>
+					<button class="button blue mobile" onclick="finalizarCompra()">Finalizar
+						Comprar</button>
+					<button class="button blue mobile" onclick="verificarPromocao()">Verificar
+						Promoção</button>
+				</div>
+			</div>
+		</section>
+		<!--/#do_action-->
+
+		<div class="modal" id="modal">
+			<div class="modal-content">
+				<header class="modal-header">
+					<h2></h2>
+					<span class="modal-close" id="modalClose">&#10006;</span>
+				</header>
+
+				<div class="modal-th">
+					<table>
+						<div id="douglas"></div>
+
+
+					</table>
+				</div>
+
+
+
+				<footer class="modal-footer">
+
+					<button class="button listar" onclick="listarProduto()">Listar</button>
+
+					<button class="button blue" id="btn-Salvar"
+						onclick="funcaoSalvar()">Adicionar!</button>
+
+				</footer>
+			</div>
+		</div>
+	</main>
+</body>
+</html>

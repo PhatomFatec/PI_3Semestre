@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/records.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/modal2.css">
+    <script src="main.js" defer></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <title>Cadastro de Produtos</title>
+</head>
+
+<body>    
+    <div class="menu-special">
+        <div class="menu-special-left">
+            <a href=#></a>
+        </div>
+
+        <div class="menu-special-right">
+            <a href="https://github.com/PhatomFatec/PI_3Semestre">Github do Projeto</a>
+            <a href="https://github.com/PhatomFatec">Phantom</a>
+            <a href="https://www.midall.com.br/">Cliente MidAll</a>
+        </div>
+    </div>
+
+    <header>
+        <a class="logo">e</a>
+        
+        <div class="header-tracking">
+            <div class="header-tracking-center">
+                <a href="http://localhost:8080/">Cadastrar Produto</a>
+                <a href="http://localhost:8080/sale/sale.html">Cadastrar Promoção</a>
+                <a href="http://localhost:8080/cart/cart.html">Carrinho de Compras</a>
+            </div>
+
+            <div class="header-tracking-right">
+                <i class="material-icons"><a href="http://localhost:8080/">shopping_basket</a></i>
+                <i class="material-icons"><a href="http://localhost:8080/cart/cart.html">shopping_cart</a></i>
+                <i class="material-icons"><a>local_offer</a></i>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Produto</button>
+        <button type="button" class="button blue mobile" id="listarProduto" onclick="listarProduto()">Listar Produto</button>
+
+        <table class="records">
+
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Categoria</th>
+                    <th>Preço</th>
+                    <th>Status<th>
+                    <th>Ação</th>
+                </tr>
+            </thead>
+            
+            <tbody id="abc">
+                
+            </tbody>
+        </table>
+
+	
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    Cadastrar Produto
+                    <span class="modal-close" id="modalClose">&#10006;</span>
+                </header>
+                
+                <form class="modal-form">
+                	<input type="number"  min="1" step="any" class="modal-field" id="modal-codigo" placeholder="Código">
+                    <input type="text" class="modal-field" id="modal-nome" placeholder="Nome">
+                    <input type="email" class="modal-field" id="modal-desc" placeholder="Descrição">
+                    <input type="email" class="modal-field" id="modal-categoria" placeholder="Categoria">
+                    <input type="number"  min="1" step="any" class="modal-field" id="modal-preco" placeholder="Preço">
+                    Ativo:
+     				<input type="checkbox" id=modal-status name="Status" value="Ativo" checked>
+                   
+                </form>
+                
+                <footer class="modal-footer">
+                    <button class="button blue" id="btn-Salvar" onclick="funcaoSalvar()">Cadastrar! </button>                 
+                </footer>
+                
+            </div>
+        </div>
+        
+         <div class="modal2" id="modal2">
+            <div class="modal-content2">
+                <header class="modal-header2">
+                    Alterar Produto
+                    <span class="modal-close2" id="modalClose2">&#10006;</span>
+                </header>
+                
+                <form class="modal-form">
+                	<input type="number"  min="1" step="any" class="modal-field2" id="modalEdit-codigo" placeholder="Código">
+                    <input type="text" class="modal-field2" id="modalEdit-nome" placeholder="Nome" value="testetse">
+                    <input type="email" class="modal-field2" id="modalEdit-desc" placeholder="Descrição">
+                    <input type="email" class="modal-field2" id="modalEdit-categoria" placeholder="Categoria">
+                    <input type="number"  min="1" step="any" class="modal-field2" id="modalEdit-preco" placeholder="Preço">
+
+                   
+                </form>
+                
+                <footer class="modal-footer">
+                    <button class="button blue" id="btn-Listar" onclick="alterarProdutoTeste()">Listar! </button>              
+                    <button class="button blue" id="btn-Salvar" onclick="funcaoSalvar()">Alterar! </button>              
+                </footer>
+                
+            </div>
+        </div>
+        
+        
+        
+		
+
+
+    </main>
+
+</body>
+</html>
