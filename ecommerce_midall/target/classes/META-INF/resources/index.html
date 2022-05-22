@@ -31,10 +31,11 @@
         </div>
     </div>
 
-    <header>
-        <a class="logo">e</a>
-        
+    <header>   
         <div class="header-tracking">
+            
+            <div class="logo-left">e</div>
+            
             <div class="header-tracking-center">
                 <a href="http://localhost:8080/">Cadastrar Produto</a>
                 <a href="http://localhost:8080/sale/sale.html">Cadastrar Promoção</a>
@@ -42,16 +43,17 @@
             </div>
 
             <div class="header-tracking-right">
-                <i class="material-icons"><a href="http://localhost:8080/">shopping_basket</a></i>
+                <i class="material-icons"><a href="http://localhost:8080/"><font color="#1F1F1F">shopping_basket</font></a></i>
                 <i class="material-icons"><a href="http://localhost:8080/cart/cart.html">shopping_cart</a></i>
-                <i class="material-icons"><a>local_offer</a></i>
+                <i class="material-icons"><a href="http://localhost:8080/sale/sale.html">local_offer</a></i>
             </div>
         </div>
     </header>
 
     <main>
+        <div style="display: inline-block; margin-right: 30px">
         <button type="button" class="button blue mobile" id="cadastrarCliente">Cadastrar Produto</button>
-        <button type="button" class="button blue mobile" id="listarProduto" onclick="listarProduto()">Listar Produto</button>
+        <button type="button" class="button blue mobile" id="listarProduto" onclick="listarProduto()">Listar Produto</button></div>
 
         <table class="records">
 
@@ -86,13 +88,13 @@
                     <input type="email" class="modal-field" id="modal-desc" placeholder="Descrição">
                     <input type="email" class="modal-field" id="modal-categoria" placeholder="Categoria">
                     <input type="number"  min="1" step="any" class="modal-field" id="modal-preco" placeholder="Preço">
-                    Ativo:
-     				<input type="checkbox" id=modal-status name="Status" value="Ativo" checked>
+                    <center> Ativo: 
+     				<input type="checkbox" id=modal-status name="Status" value="Ativo" checked></center> 
                    
                 </form>
                 
                 <footer class="modal-footer">
-                    <button class="button blue" id="btn-Salvar" onclick="funcaoSalvar()">Cadastrar! </button>                 
+                    <button class="button blue" id="btn-Salvar" onclick="funcaoSalvar()">Cadastrar </button>                 
                 </footer>
                 
             </div>
@@ -116,8 +118,8 @@
                 </form>
                 
                 <footer class="modal-footer">
-                    <button class="button blue" id="btn-Listar" onclick="alterarProdutoTeste()">Listar! </button>              
-                    <button class="button blue" id="btn-Salvar" onclick="funcaoSalvar()">Alterar! </button>              
+                    <button class="button blue" id="btn-Listar" onclick="alterarProdutoTeste()">Listar </button>              
+                    <button class="button blue" id="btn-Salvar" onclick="funcaoSalvar()">Alterar </button>              
                 </footer>
                 
             </div>

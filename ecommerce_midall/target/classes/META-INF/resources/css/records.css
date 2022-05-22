@@ -8,12 +8,16 @@
     height: 50px;
     background-color: white;
     padding-left: 20px;
-    font-size: 1.2rem;    
+    font-size: 18px;    
     border-bottom: 1px solid #E3E3E3;
 }
 .records td{
     height: 50px;
     padding-left: 20px;
+}
+
+thead{
+    color: #1F1F1F;
 }
 
 .records th:last-child,

@@ -6,27 +6,24 @@
 
 .records th{
     height: 50px;
-    background-color: var(--primary-color);
+    background-color: white;
     padding-left: 20px;
-    font-size: 1.2rem;    
-    border-bottom: 1px solid #E3E3E3; 
+    font-size: 18px;    
+    border-bottom: 1px solid #E3E3E3;
 }
 .records td{
     height: 50px;
     padding-left: 20px;
 }
 
+thead{
+    color: #1F1F1F;
+}
+
 .records th:last-child,
 .records td:last-child{
     padding: 0;
-    min-width: 15px;
-    text-align: center;
-}
-
-.records th:first-child,
-.records td:first-child{
-    padding: 0;
-    min-width: 15px;
+    min-width: 140px;
     text-align: center;
 }
 

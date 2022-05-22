@@ -16,6 +16,10 @@
     padding-right: 50px;
 }
 
+thead{
+    color: #1F1F1F;
+}
+
 .records th.light{
     width: 580px;
     background-color: #1FB6FF;
