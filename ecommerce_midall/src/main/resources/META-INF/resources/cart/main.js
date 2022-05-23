@@ -27,41 +27,45 @@ function funcaoSalvar() {
 			console.log('Get Realizado!')
 			console.log(data)
 			var items = [];
-			let checkbox = $('#modal-produto');
 
-			//if ($(checkbox).is(":checked")) {
-			//	console.log("foi")
-			//	} else {
-			//	console.log("Nao foi")
-			//	}
 			var is_checked = false;
-
-
-			
-			
+			var checkboxes = [];
+			for (var i = 0; i < document.getElementsByTagName("input").length; i++) {
+				if (document.getElementsByTagName("input")[i].checked) { checkboxes.push(i) }
+			}
+				console.log(checkboxes)
+				
 				$('input[type="checkbox"]').each(function() {
 					if ($(this).is(":checked")) {
 						is_checked = true;
 						console.log("foi")
+						
+						for(var i = 0; i < checkboxes.length; i++){
+							
 						items.push(`
-					<tr id="jorge"><td><span>${this.codProd} </td></span> 
-					<td><span id="nomeRow$" class="rowNome"> ${this.nomeProd} </td></span> 
-					<td><span id="descRow$" class="rowDesc"> ${this.descProd} </td></span> 
-					<td><span id="catRow$" class="rowCat"> ${this.categoria} </td></span> 
-					<td><input id="quantRow$" class="modal-field" type="number" step="1" min="1" max="100" value="1"></td></span> 
-					<td><span id="valorRow$" class="rowValor">R$ ${this.valorProd}  </td></span>
-					<td><span id="valorRow$" class="rowValor">R$ ${this.valorProd}  </td></span>
+					<tr id="jorge"><td><span>${data[checkboxes[i]]["codProd"]} </td></span> 
+					<td><span id="nomeRow$" class="rowNome"> ${data[checkboxes[i]]["nomeProd"]} </td></span> 
+					<td><span id="descRow$" class="rowDesc"> ${data[checkboxes[i]]["descProd"]} </td></span> 
+					<td><span id="catRow$" class="rowCat"> ${data[checkboxes[i]]["categoria"]} </td></span> 
+					<td><button class="less" onclick="valores">-</button><input id="quantRow$" name="quantity" min="1" max="3" ><button class="more">+</button>	</td></span> 
+					<td><span id="valorRow$" class="rowValor">R$ ${data[checkboxes[i]]["valorProd"]}  </td></span>
+					<td><span id="valorRow$" class="rowValor">R$ ${data[checkboxes[i]]["valorProd"]}  </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
-
+							
+			
+}
 					}
-				
-
-
-
+		
 			});
-			$("#cleiton").append(items);
-
+			if(items.length >= 1){
+				items.length = checkboxes.length
+				$("#cleiton").append(items);
+				items = [];
+				checkboxes = [];
+			}
+			
+			
 
 
 		}
@@ -78,8 +82,6 @@ function listarProduto() {
 		data: 'teste',
 		cache: false,
 		success: function(data) {
-			//console.log('Get Realizado!')
-			//console.log(data)
 
 			var items = [];
 
@@ -102,8 +104,6 @@ function funcaoAtualizar() {
 		data: 'teste',
 		cache: false,
 		success: function(data) {
-			//console.log('Get Realizado!')
-			//console.log(data)
 
 			var items = [];
 			$.each(data, function(i) {
@@ -175,9 +175,6 @@ function verificarPromocao() {
 		cache: false,
 		success: function(data) {
 
-			console.log('Get Realizado!!')
-			console.log(data)
-
 			let produtosNomes = document.getElementsByClassName('rowNome')
 			let categoriasNomes = document.getElementsByClassName('rowCat')
 
@@ -223,10 +220,23 @@ function verificarPromocao() {
 	});
 }
 
+function valores(){
+	$(document).ready(function(){
+    $( "#quantRow$" ).prop( "disabled", true );
+    var nivel = 0;
+    $(".more").on('click', function(){  
+          nivel++; 
+    		  $("#level").val(nivel);    
+    });
+    
+    $(".less").on('click', function(){  
+          nivel--; 
+    		  $("#level").val(nivel);    
+    });
+    
+});
 
-
-
-
+}
 function funcaoRemover() {
 	$("#jorge").remove();
 }
