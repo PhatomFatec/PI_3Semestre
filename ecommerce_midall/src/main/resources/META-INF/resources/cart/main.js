@@ -29,44 +29,43 @@ function funcaoSalvar() {
 			var items = [];
 			let checkbox = $('#modal-produto');
 
+			//if ($(checkbox).is(":checked")) {
+			//	console.log("foi")
+			//	} else {
+			//	console.log("Nao foi")
+			//	}
+			var is_checked = false;
 
-	
-			$.each(data, function(i) {
-				console.log($(this).is(":checked"));
 
-				items.push(`
+			
+			
+				$('input[type="checkbox"]').each(function() {
+					if ($(this).is(":checked")) {
+						is_checked = true;
+						console.log("foi")
+						items.push(`
 					<tr id="jorge"><td><span>${this.codProd} </td></span> 
-					<td><span id="nomeRow${i}" class="rowNome"> ${this.nomeProd} </td></span> 
-					<td><span id="descRow${i}" class="rowDesc"> ${this.descProd} </td></span> 
-					<td><span id="catRow${i}" class="rowCat"> ${this.categoria} </td></span> 
-					<td><input id="quantRow${i}" class="modal-field" type="number" step="1" min="1" max="100" value="1"></td></span> 
-					<td><span id="valorRow${i}" class="rowValor">R$ ${this.valorProd}  </td></span>
-					<td><span id="valorRow${i}" class="rowValor">R$ ${this.valorProd}  </td></span>
-					<td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover${i}"><i class="material-icons">close</i></button></td></tr> 
+					<td><span id="nomeRow$" class="rowNome"> ${this.nomeProd} </td></span> 
+					<td><span id="descRow$" class="rowDesc"> ${this.descProd} </td></span> 
+					<td><span id="catRow$" class="rowCat"> ${this.categoria} </td></span> 
+					<td><input id="quantRow$" class="modal-field" type="number" step="1" min="1" max="100" value="1"></td></span> 
+					<td><span id="valorRow$" class="rowValor">R$ ${this.valorProd}  </td></span>
+					<td><span id="valorRow$" class="rowValor">R$ ${this.valorProd}  </td></span>
+					<td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
+
+					}
+				
+
 
 
 			});
-
-
 			$("#cleiton").append(items);
+
+
 
 		}
 	});
-}
-
-
-
-function add() {
-	var num = 0;
-	num++;
-	return (num);
-}
-
-function sub() {
-	var num = 0;
-	num--;
-	return (num);
 }
 
 
