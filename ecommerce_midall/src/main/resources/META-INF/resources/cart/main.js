@@ -27,10 +27,12 @@ function funcaoSalvar() {
 			console.log('Get Realizado!')
 			console.log(data)
 			var items = [];
-			var checkboxes = [];
-			for (var i = 0; i < document.getElementsByTagName("input").length; i++) {
-				if (document.getElementsByTagName("input")[i].checked) {
-					checkboxes.push(i)
+			var checked = [];
+
+
+			$("input[type='checkbox']").each(function(i) {
+				if (this.checked) {
+					checked.push(parseInt($(this).val()));
 					items.push(`
 					<tr id="jorge"><td><span>${data[i]["codProd"]} </td></span> 
 					<td><span id="nomeRow$" class="rowNome"> ${data[i]["nomeProd"]} </td></span> 
@@ -38,29 +40,26 @@ function funcaoSalvar() {
 					<td><span id="catRow$" class="rowCat"> ${data[i]["categoria"]} </td></span> 
 					<td><form>
   <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-  <input type="number" id="number" value="1" />
+  <input type="number" id="qntd" value="1" />
   <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
 </form>	</td></span> 
 					<td><span id="valorRow$" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
-					<td><span id="valorRow$" class="rowValor">R$ ${data[i]["valorProd"] * document.getElementById('number')}  </td></span>
+					<td><span id="totRow$$" class="rowTotal">R$ ${data[i]["valorProd"] * 10}  </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
+					console.log("The index is " + i + " and the value is " + $(this).val());
 				}
-				checkboxes = [];
-			}
+			});	
+
 			if(items.length >= 1) {
 				$("#cleiton").append(items);
 				items = [];
-				console.log(checkboxes);
+				checkboxes = [];
+				
 			}
 			else if(items.length <= 0){
 				alert("Escolha ao menos um item !!")
 			}
-			else if(checkboxes.length > data.length){
-				alert("Carrinho cheio. Por favor finalize a compra atual !!")
-			}
-
-
 
 
 		}
@@ -216,18 +215,18 @@ function verificarPromocao() {
 }
 
 function increaseValue() {
-	var value = parseInt(document.getElementById('number').value, 10);
+	var value = parseInt(document.getElementById('qntd').value, 10);
 	value = isNaN(value) ? 1 : value;
 	value++;
-	document.getElementById('number').value = value;
+	document.getElementById('qntd').value = value;
 }
 
 function decreaseValue() {
-	var value = parseInt(document.getElementById('number').value, 10);
+	var value = parseInt(document.getElementById('qntd').value, 10);
 	value = isNaN(value) ? 1 : value;
 	value < 1 ? value = 1 : '';
 	value--;
-	document.getElementById('number').value = value;
+	document.getElementById('qntd').value = value;
 }
 function funcaoRemover() {
 	$("#jorge").remove();
