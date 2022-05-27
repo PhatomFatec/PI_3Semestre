@@ -9,7 +9,7 @@ import models.Promocao;
 public class PromocaoRepository {
 	
 	public Promocao cadastrar( Promocao promocao){
-		Promocao p = new Promocao(promocao.nomePromo, promocao.opcaoPromo, promocao.porcentPromo);
+		Promocao p = new Promocao(promocao.nomePromo, promocao.opcaoPromo, promocao.porcentPromo, promocao.tipopromocao);
 		p.persist();
 		return p;
 		}
