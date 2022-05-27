@@ -12,11 +12,19 @@ public class TipoPromocao extends PanacheEntity {
 	public Long codTipoPromo;
 	public String descTipoPromo;
 	
+	
+	
+	
+	public TipoPromocao() {
+	}
+	
 	public TipoPromocao(Long codTipoPromo, String descTipoPromo) {
 		super();
 		this.codTipoPromo = codTipoPromo;
 		this.descTipoPromo = descTipoPromo;
 	}
+	
+	
 
 	public Long getCodTipoPromo() {
 		return codTipoPromo;

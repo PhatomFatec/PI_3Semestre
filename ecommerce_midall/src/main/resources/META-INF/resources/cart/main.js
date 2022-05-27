@@ -40,14 +40,15 @@ function funcaoSalvar() {
 					<td><span id="catRow$" class="rowCat"> ${data[i]["categoria"]} </td></span> 
 					<td><form>
   <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-  <input type="number" id="qntd" value="1" />
+  <input type="text" id="qntd" value="1" readonly="true"/>
   <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
 </form>	</td></span> 
 					<td><span id="valorRow$" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
-					<td><span id="totRow$$" class="rowTotal">R$ ${data[i]["valorProd"] * 10}  </td></span>
+					<td><span id="totRow$$" class="rowTotal">R$ ${data[i]["valorProd"] }  </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
-					console.log("The index is " + i + " and the value is " + $(this).val());
+					//console.log(" index  " + i + "  value  " + $(this).val());
+
 				}
 			});	
 
@@ -55,6 +56,7 @@ function funcaoSalvar() {
 				$("#cleiton").append(items);
 				items = [];
 				checkboxes = [];
+				console.log(document.getElementById('qntd').value);
 				
 			}
 			else if(items.length <= 0){
