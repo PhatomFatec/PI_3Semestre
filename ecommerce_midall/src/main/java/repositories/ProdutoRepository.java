@@ -9,7 +9,7 @@ import models.Produto;
 public class ProdutoRepository {
 	
 	public Produto cadastrar( Produto produto){
-		Produto p = new Produto(produto.codProd, produto.nomeProd, produto.descProd,produto.categoria, produto.valorProd, produto.statusProd);
+		Produto p = new Produto(produto.codProd, produto.nomeProd, produto.descProd,produto.categoria, produto.valorProd, produto.statusProd, produto.quantidade);
 		p.persist();
 		return p;
 		}

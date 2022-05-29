@@ -15,12 +15,13 @@ public class Produto extends PanacheEntity {
 	public String categoria;
 	public Double valorProd;
 	public String statusProd;
+	public Integer quantidade;
 
 	public Produto() {
 	}
 
 	public Produto(Long codProd, String nomeProd, String descProd, String categoria, Double valorProd,
-			String statusProd) {
+			String statusProd, Integer quantidade) {
 		super();
 		this.codProd = codProd;
 		this.nomeProd = nomeProd;
@@ -28,6 +29,7 @@ public class Produto extends PanacheEntity {
 		this.categoria = categoria;
 		this.valorProd = valorProd;
 		this.statusProd = statusProd;
+		this.quantidade = quantidade;
 	}
 
 	public Long getCodProd() {
@@ -72,6 +74,14 @@ public class Produto extends PanacheEntity {
 
 	public String getStatusProd() {
 		return statusProd;
+	}
+
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
 	}
 
 	public void setStatusProd(String statusProd) {

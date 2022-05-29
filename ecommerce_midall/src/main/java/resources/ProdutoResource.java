@@ -35,9 +35,9 @@ public class ProdutoResource {
 	
 	@PUT
 	@Path("{id}")
-	public Response atualizar(@PathParam("id")Long id,Produto produto, String statusProd) {
+	public Response atualizar(@PathParam("id")Long id,Produto produto, String statusProd, Integer quantidade) {
 		produto.id = id;
-		produtoService.atualizar(produto, id, statusProd);
+		produtoService.atualizar(produto, id, statusProd, quantidade);
 		return Response.ok().build();
 		}
 	

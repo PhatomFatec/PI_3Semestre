@@ -40,26 +40,25 @@ function funcaoSalvar() {
 					<td><span id="catRow$" class="rowCat"> ${data[i]["categoria"]} </td></span> 
 					<td><form>
   <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-  <input type="text" id="qntd" value="1" readonly="true"/>
+  <input type="text" id="qntd" value="${data[i]["quantidade"]}" readonly="true"/>
   <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
 </form>	</td></span> 
 					<td><span id="valorRow$" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
-					<td><span id="totRow$$" class="rowTotal">R$ ${data[i]["valorProd"] }  </td></span>
+					<td><span id="totRow$$" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"]}   </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
 					//console.log(" index  " + i + "  value  " + $(this).val());
 
 				}
-			});	
+			});
 
-			if(items.length >= 1) {
+			if (items.length >= 1) {
 				$("#cleiton").append(items);
 				items = [];
 				checkboxes = [];
-				console.log(document.getElementById('qntd').value);
-				
+
 			}
-			else if(items.length <= 0){
+			else if (items.length <= 0) {
 				alert("Escolha ao menos um item !!")
 			}
 
@@ -161,8 +160,6 @@ function finalizarCompra() {
 }
 
 
-
-
 function verificarPromocao() {
 	$.ajax({
 		type: "GET",
@@ -217,12 +214,42 @@ function verificarPromocao() {
 }
 
 function increaseValue() {
+
 	var value = parseInt(document.getElementById('qntd').value, 10);
 	value = isNaN(value) ? 1 : value;
 	value++;
-	document.getElementById('qntd').value = value;
-}
+	var qnt = document.getElementById('qntd').value = value;
 
+	$.ajax({
+		url: "http://localhost:8080/cadastroProduto/2",
+		async: false,
+		data: JSON.stringify(
+			{
+				"quantidade": qnt
+			}
+		),
+		type: 'PUT',
+		headers: {
+			Accept: 'application/json;charset=utf-8',
+			'Content-Type': 'application/json'
+		},
+		dataType: 'json'
+	});
+	let y = document.getElementById('valorRow$').innerHTML
+	y = y.replace('R$ ', '')
+	y = parseInt(y)
+	let count = y*=qnt 	
+	document.getElementById("totRow$$").innerHTML="R$" + count
+	
+	if(qnt == 5){
+		alert("Promoção de 20% de desconto aplicada")
+	}
+	
+	if(qnt >= 5 && qnt <= 10){
+		document.getElementById("totRow$$").innerHTML="R$" + (count - (count*0.2))
+	}
+
+}
 function decreaseValue() {
 	var value = parseInt(document.getElementById('qntd').value, 10);
 	value = isNaN(value) ? 1 : value;

@@ -43,7 +43,8 @@
 						 "descProd": descProduto,
 						 "categoria": categoriaProduto,
 						 "valorProd": precoProduto,
-						"statusProd": statusProduto
+						"statusProd": statusProduto,
+						"quantidade": 1
 					 }
 				 ),
 				 type: 'POST',
