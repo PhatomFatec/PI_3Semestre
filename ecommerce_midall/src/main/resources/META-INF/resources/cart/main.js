@@ -39,12 +39,12 @@ function funcaoSalvar() {
 					<td><span id="descRow$" class="rowDesc"> ${data[i]["descProd"]} </td></span> 
 					<td><span id="catRow$" class="rowCat"> ${data[i]["categoria"]} </td></span> 
 					<td><form>
-  <div class="value-button" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
-  <input type="text" id="qntd" value="${data[i]["quantidade"]}" readonly="true"/>
-  <div class="value-button" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+  <div class="value-button" id="decrease" onclick="decreaseValue(${i})" value="Decrease Value">-</div>
+  <input type="text" size="5" id="qntd${i}" value="${data[i]["quantidade"]}" readonly="true"/>
+  <div class="value-button" id="increase" onclick="increaseValue(${i})" value="Increase Value">+</div>
 </form>	</td></span> 
-					<td><span id="valorRow$" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
-					<td><span id="totRow$$" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"]}   </td></span>
+					<td><span id="valorRow${i}" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
+					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"]}   </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
 					//console.log(" index  " + i + "  value  " + $(this).val());
@@ -213,15 +213,15 @@ function verificarPromocao() {
 	});
 }
 
-function increaseValue() {
+function increaseValue(i) {
 
-	var value = parseInt(document.getElementById('qntd').value, 10);
+	var value = parseInt(document.getElementById('qntd'+i).value, 10);
 	value = isNaN(value) ? 1 : value;
 	value++;
-	var qnt = document.getElementById('qntd').value = value;
+	var qnt = document.getElementById('qntd'+i).value = value;
 
 	$.ajax({
-		url: "http://localhost:8080/cadastroProduto/2",
+		url: "http://localhost:8080/cadastroProduto/"+(i+1),
 		async: false,
 		data: JSON.stringify(
 			{
@@ -235,28 +235,61 @@ function increaseValue() {
 		},
 		dataType: 'json'
 	});
-	let y = document.getElementById('valorRow$').innerHTML
+	let y = document.getElementById('valorRow'+i).innerHTML
 	y = y.replace('R$ ', '')
 	y = parseInt(y)
 	let count = y*=qnt 	
-	document.getElementById("totRow$$").innerHTML="R$" + count
+	document.getElementById("totRow"+i).innerHTML="R$" + count
+	if(qnt == 5){
+		alert("Promoção de 20% de desconto aplicada")
+	}
+	
+	if(qnt >= 5 && qnt <= 10){
+		document.getElementById("totRow"+i).innerHTML="R$" + (count - (count*0.2))
+	}
+
+}
+
+
+function decreaseValue(i) {
+	var value = parseInt(document.getElementById('qntd'+i).value, 10);
+	value = isNaN(value) ? 1 : value;
+	value--;
+	var qnt = document.getElementById('qntd'+i).value = value;
+
+	$.ajax({
+		url: "http://localhost:8080/cadastroProduto/"+(i+1),
+		async: false,
+		data: JSON.stringify(
+			{
+				"quantidade": qnt
+			}
+		),
+		type: 'PUT',
+		headers: {
+			Accept: 'application/json;charset=utf-8',
+			'Content-Type': 'application/json'
+		},
+		dataType: 'json'
+	});
+	let y = document.getElementById('valorRow'+i).innerHTML
+	y = y.replace('R$ ', '')
+	y = parseInt(y)
+	let count = y*=qnt 	
+	document.getElementById("totRow"+i).innerHTML="R$" + count
 	
 	if(qnt == 5){
 		alert("Promoção de 20% de desconto aplicada")
 	}
 	
 	if(qnt >= 5 && qnt <= 10){
-		document.getElementById("totRow$$").innerHTML="R$" + (count - (count*0.2))
+		document.getElementById("totRow"+i).innerHTML="R$" + (count - (count*0.2))
 	}
 
 }
-function decreaseValue() {
-	var value = parseInt(document.getElementById('qntd').value, 10);
-	value = isNaN(value) ? 1 : value;
-	value < 1 ? value = 1 : '';
-	value--;
-	document.getElementById('qntd').value = value;
-}
+
+
+
 function funcaoRemover() {
 	$("#jorge").remove();
 }

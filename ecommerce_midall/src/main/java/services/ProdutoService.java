@@ -26,7 +26,6 @@ public class ProdutoService {
 		Optional <Produto> produtoBD = Produto.findByIdOptional(id);
 		if(produtoBD.isPresent()) {
 			Produto nomeProd = produtoBD.get();
-			nomeProd.statusProd = produto.statusProd;
 			nomeProd.quantidade = produto.quantidade;
 			}
 		return produto;
