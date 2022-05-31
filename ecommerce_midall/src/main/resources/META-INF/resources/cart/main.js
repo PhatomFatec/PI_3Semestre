@@ -34,7 +34,7 @@ function funcaoSalvar() {
 				if (this.checked) {
 					checked.push(parseInt($(this).val()));
 					items.push(`
-					<tr id="jorge"><td><span>${data[i]["codProd"]} </td></span> 
+					<tr id="jorge${i}"><td><span>${data[i]["codProd"]} </td></span> 
 					<td><span id="nomeRow$" class="rowNome"> ${data[i]["nomeProd"]} </td></span> 
 					<td><span id="descRow$" class="rowDesc"> ${data[i]["descProd"]} </td></span> 
 					<td><span id="catRow$" class="rowCat"> ${data[i]["categoria"]} </td></span> 
@@ -45,7 +45,7 @@ function funcaoSalvar() {
 </form>	</td></span> 
 					<td><span id="valorRow${i}" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
 					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"]}   </td></span>
-					<td><button type="button" class="button red" onclick="funcaoRemover()" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
+					<td><button type="button" class="button red" onclick="funcaoRemover(${i})" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
 					//console.log(" index  " + i + "  value  " + $(this).val());
 
@@ -161,54 +161,22 @@ function finalizarCompra() {
 
 
 function verificarPromocao() {
+
 	$.ajax({
 		type: "GET",
 		url: "http://localhost:8080/cadastroPromocao",
 		data: 'teste',
 		cache: false,
 		success: function(data) {
-
-			let produtosNomes = document.getElementsByClassName('rowNome')
-			let categoriasNomes = document.getElementsByClassName('rowCat')
-
-
-			$.each(data, function(i) {
-				let opcaoSelecionada = data[i]['opcaoPromo']	//Nome do Produto Selecionado na promoção
-
-				for (k in produtosNomes) {	//Varre todos nomes dos produtos da tabela
-					let produtoAtual = produtosNomes[k].innerText //Nome do Produto atual do array da classe html
-
-					console.log('Aqui!!')
-
-					if (produtoAtual == opcaoSelecionada) { //Contem Promoção para o Nome do produto que está na tabela
-						//console.log(`O ${k} contem o nome de produto igual a promoção ${i}`)
-
-						let valorSemDesconto = document.getElementById(`valorRow${k}`).innerText
-
-						valorSemDesconto = valorSemDesconto.replace('R$ ', '')
-						valorSemDesconto = parseInt(valorSemDesconto)
-
-						console.log('Aqui2!!')
-
-						let porcentagemPromocao = data[i]['porcentPromo']
-						let desconto = (valorSemDesconto * (porcentagemPromocao / 100))
-						let valorComDesconto = (valorSemDesconto - (desconto))
-
-						console.log(desconto)
-						console.log(valorSemDesconto)
-						console.log(valorComDesconto)
-
-						console.log('Aqui 3!!')
-
-						document.getElementById('span-precoBruto').innerHTML = `R$: ${valorSemDesconto}`
-						document.getElementById('span-precoDesconto').innerHTML = `R$: ${desconto}`
-						document.getElementById('span-precoTotal').innerHTML = `R$: ${valorComDesconto}`
-
-					}
-
-				}
-			})
-
+			console.log('Get Realizado!')
+			console.log(data)
+			
+			if(data.length <= 0){
+				console.log("Promoção não aplicada");
+			}
+			else{
+				console.log("Promoção aplicada para o produto x")
+			}
 		}
 	});
 }
@@ -219,7 +187,10 @@ function increaseValue(i) {
 	value = isNaN(value) ? 1 : value;
 	value++;
 	var qnt = document.getElementById('qntd'+i).value = value;
-
+	if (qnt <= 0) {
+		alert("adcione ao menos um produto");
+		qnt = 1;
+	}
 	$.ajax({
 		url: "http://localhost:8080/cadastroProduto/"+(i+1),
 		async: false,
@@ -247,7 +218,7 @@ function increaseValue(i) {
 	if(qnt >= 5 && qnt <= 10){
 		document.getElementById("totRow"+i).innerHTML="R$" + (count - (count*0.2))
 	}
-
+	verificarPromocao();
 }
 
 
@@ -256,7 +227,10 @@ function decreaseValue(i) {
 	value = isNaN(value) ? 1 : value;
 	value--;
 	var qnt = document.getElementById('qntd'+i).value = value;
-
+	if (qnt <=0 ){
+		alert("adcione ao menos um produto");
+		qnt = 1;
+	}
 	$.ajax({
 		url: "http://localhost:8080/cadastroProduto/"+(i+1),
 		async: false,
@@ -290,6 +264,6 @@ function decreaseValue(i) {
 
 
 
-function funcaoRemover() {
-	$("#jorge").remove();
+function funcaoRemover(i) {
+	$("#jorge"+i).remove();
 }
