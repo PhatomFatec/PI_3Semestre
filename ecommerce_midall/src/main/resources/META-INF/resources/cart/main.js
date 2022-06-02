@@ -44,7 +44,7 @@ function funcaoSalvar() {
   <div class="value-button" id="increase" onclick="increaseValue(${i})" value="Increase Value">+</div>
 </form>	</td></span> 
 					<td><span id="valorRow${i}" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
-					<td><span id="descontoRow${i}" class="rowValor">R$ ${10}  </td></span>
+					<td><span id="descontoRow${i}" class="rowValor"> ${10}  </td></span>
 					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"]}   </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover(${i})" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
@@ -181,6 +181,54 @@ function verificarPromocao() {
 		}
 	});
 }
+function verificarPromocaoCategoria(){
+/*	var jsonzao = [{"nomeCampo": "eletronicos", 
+	"nomePromo": "promocao celular",
+        "opcaoPromo": "Categoria", 
+        "porcentPromo": 50.0, 
+        "quantidadeBonus": "NULL",
+        "quantidadeMin": 1, 
+        "tipoPromocao": "DESCONTO EM CATEGORIA"}]
+	console.log(jsonzao[0]["nomeCampo"])
+	if (jsonzao[i]["nomeCampo"] == data[i]["categoria"]) {
+		if (jsonzao[i][quantidadeMin] >= quantidade) {
+			if (jsonzao[i]["porcentPromo"] != "NULL") {
+				return jsonzao[i]["porcentPromo"] + "%" // return vira uma variável retornando o valor
+			}
+			else if (jsonzao[i]["quantidadeBonus"] != "NULL") {
+				return "R$" + jsonzao[i]["quantidadeBonus"]
+			}
+		}
+	}
+	else {
+		console.log("Promoção não aplicada")
+	} */
+	$.ajax({
+		type: "GET",
+		url: "http://localhost:8080/cadastroPromocao",
+		data: 'teste',
+		cache: false,
+		success: function(data) {
+			console.log('Get Realizado - categoria!')
+			console.log(data)	
+		}
+	});	
+	
+	$.ajax({
+		type: "GET",
+		url: "http://localhost:8080/carrinho",
+		data: 'teste',
+		cache: false,
+		success: function(data) {
+			console.log('Get Realizado - categoria - carrinho!')
+			console.log(data)	
+		}
+	});	
+}
+
+	
+
+
 
 function increaseValue(i) {
 
