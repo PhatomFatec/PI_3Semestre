@@ -44,6 +44,7 @@ function funcaoSalvar() {
   <div class="value-button" id="increase" onclick="increaseValue(${i})" value="Increase Value">+</div>
 </form>	</td></span> 
 					<td><span id="valorRow${i}" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
+					<td><span id="descontoRow${i}" class="rowValor">R$ ${10}  </td></span>
 					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"]}   </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover(${i})" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
@@ -207,6 +208,9 @@ function increaseValue(i) {
 		dataType: 'json'
 	});
 	let y = document.getElementById('valorRow'+i).innerHTML
+	let z = document.getElementById("descontoRow"+i).innerHTML
+	z = z.replace('R$ ', '')
+	z = parseInt(z)
 	y = y.replace('R$ ', '')
 	y = parseInt(y)
 	let count = y*=qnt 	
@@ -216,7 +220,7 @@ function increaseValue(i) {
 	}
 	
 	if(qnt >= 5 && qnt <= 10){
-		document.getElementById("totRow"+i).innerHTML="R$" + (count - (count*0.2))
+		document.getElementById("totRow"+i).innerHTML="R$" + (count - (count*0.2)- z)
 	}
 	verificarPromocao();
 }
@@ -250,14 +254,14 @@ function decreaseValue(i) {
 	y = y.replace('R$ ', '')
 	y = parseInt(y)
 	let count = y*=qnt 	
-	document.getElementById("totRow"+i).innerHTML="R$" + count
+	document.getElementById("totRow"+i).innerHTML="R$" + count 
 	
 	if(qnt == 5){
 		alert("Promoção de 20% de desconto aplicada")
 	}
 	
 	if(qnt >= 5 && qnt <= 10){
-		document.getElementById("totRow"+i).innerHTML="R$" + (count - (count*0.2))
+		document.getElementById("totRow"+i).innerHTML="R$" + (count - (count*0.2)) 
 	}
 
 }
