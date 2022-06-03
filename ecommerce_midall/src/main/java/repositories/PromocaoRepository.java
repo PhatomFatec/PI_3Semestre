@@ -8,8 +8,9 @@ import models.Promocao;
 @ApplicationScoped
 public class PromocaoRepository {
 	
-	public Promocao cadastrar( Promocao promocao){
-		Promocao p = new Promocao(promocao.nomePromo, promocao.opcaoPromo, promocao.porcentPromo, promocao.tipopromocao);
+	public Promocao cadastrar(Promocao promocao){
+		Promocao p = new Promocao(promocao.nomePromo, promocao.opcaoPromo, promocao.porcentPromo,
+		promocao.tipoPromocao, promocao.quantidadeMin, promocao.quantidadeBonus, promocao.nomeCampo);
 		p.persist();
 		return p;
 		}

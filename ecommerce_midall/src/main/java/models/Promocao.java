@@ -1,7 +1,5 @@
 package  models;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
@@ -18,22 +16,48 @@ public class Promocao extends PanacheEntity{
 	public String nomePromo;
 	public String opcaoPromo;
 	public Double porcentPromo;
-	@ManyToOne
-	@JoinColumn(name="codTipoPromocao")
-	public TipoPromocao tipopromocao;
+	public String tipoPromocao;
+	public Integer quantidadeMin; //x
+	public Integer quantidadeBonus; //y
+	public String nomeCampo;
 	
 	
 
-	public Promocao(String nomePromo, String opcaoPromo, Double porcentPromo, TipoPromocao tipopromocao) {
+	public Promocao(String nomePromo, String opcaoPromo, Double porcentPromo, String tipoPromocao, Integer quantidadeMin, Integer quantidadeBonus, String nomeCampo) {
 		super();
-		//this.codPromo = codPromo;
 		this.nomePromo = nomePromo;
 		this.opcaoPromo = opcaoPromo;
 		this.porcentPromo = porcentPromo;
-		this.tipopromocao.setCodTipoPromo(id);
-		 
+		this.tipoPromocao = tipoPromocao;
+		this.quantidadeMin = quantidadeMin;
+		this.quantidadeBonus = quantidadeBonus;
+		this.nomeCampo = nomeCampo;
 	}
 
+
+	public String getTipoPromocao() {
+		return this.tipoPromocao;
+	}
+
+	public void setTipoPromocao(String tipoPromocao) {
+		this.tipoPromocao = tipoPromocao;
+	}
+
+	public Integer getQuantidadeMin() {
+		return this.quantidadeMin;
+	}
+
+	public void setQuantidadeMin(Integer quantidadeMin) {
+		this.quantidadeMin = quantidadeMin;
+	}
+
+	public Integer getQuantidadeBonus() {
+		return this.quantidadeBonus;
+	}
+
+	public void setQuantidadeBonus(Integer quantidadeBonus) {
+		this.quantidadeBonus = quantidadeBonus;
+	}
 
 	public String getNomePromo() {
 		return nomePromo;
@@ -73,18 +97,6 @@ public class Promocao extends PanacheEntity{
 	public void setPorcentPromo(Double porcentPromo) {
 		this.porcentPromo = porcentPromo;
 	}
-
-
-	public TipoPromocao getTipopromocao() {
-		return tipopromocao;
-	}
-
-
-	public void setTipopromocao(TipoPromocao tipopromocao) {
-		this.tipopromocao = tipopromocao;
-	}
-	
-	
 		
 }
 
