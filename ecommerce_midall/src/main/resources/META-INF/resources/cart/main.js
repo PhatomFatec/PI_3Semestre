@@ -33,6 +33,7 @@ function funcaoSalvar() {
 			$("input[type='checkbox']").each(function(i) {
 				if (this.checked) {
 					checked.push(parseInt($(this).val()));
+					verificarPromocaoCategoria(i)
 					items.push(`
 					<tr id="jorge${i}"><td><span>${data[i]["codProd"]} </td></span> 
 					<td><span id="nomeRow$" class="rowNome"> ${data[i]["nomeProd"]} </td></span> 
@@ -181,29 +182,9 @@ function verificarPromocao() {
 		}
 	});
 }
-function verificarPromocaoCategoria(){
-/*	var jsonzao = [{"nomeCampo": "eletronicos", 
-	"nomePromo": "promocao celular",
-        "opcaoPromo": "Categoria", 
-        "porcentPromo": 50.0, 
-        "quantidadeBonus": "NULL",
-        "quantidadeMin": 1, 
-        "tipoPromocao": "DESCONTO EM CATEGORIA"}]
-	console.log(jsonzao[0]["nomeCampo"])
-	if (jsonzao[i]["nomeCampo"] == data[i]["categoria"]) {
-		if (jsonzao[i][quantidadeMin] >= quantidade) {
-			if (jsonzao[i]["porcentPromo"] != "NULL") {
-				return jsonzao[i]["porcentPromo"] + "%" // return vira uma variável retornando o valor
-			}
-			else if (jsonzao[i]["quantidadeBonus"] != "NULL") {
-				return "R$" + jsonzao[i]["quantidadeBonus"]
-			}
-		}
-	}
-	else {
-		console.log("Promoção não aplicada")
-	} */
-	$.ajax({
+function verificarPromocaoCategoria(i){
+	
+/*	$.ajax({
 		type: "GET",
 		url: "http://localhost:8080/cadastroPromocao",
 		data: 'teste',
@@ -212,16 +193,39 @@ function verificarPromocaoCategoria(){
 			console.log('Get Realizado - categoria!')
 			console.log(data)	
 		}
-	});	
+	});	*/
 	
 	$.ajax({
 		type: "GET",
 		url: "http://localhost:8080/carrinho",
 		data: 'teste',
 		cache: false,
-		success: function(data) {
+		success: function(ronaldo) {
 			console.log('Get Realizado - categoria - carrinho!')
-			console.log(data)	
+			console.log(ronaldo)	
+			
+	var jsonzao = [{"nomeCampo": "eletronicos", 
+	"nomePromo": "promocao celular",
+        "opcaoPromo": "Categoria", 
+        "porcentPromo": "NULL", 
+        "quantidadeBonus": 2000,
+        "quantidadeMin": 1, 
+        "tipoPromocao": "DESCONTO EM CATEGORIA"}]
+	console.log(jsonzao[0]["nomeCampo"])
+	
+	if (jsonzao[0]["nomeCampo"] == ronaldo[0]["categoria"]) {
+		if (jsonzao[0]["quantidadeMin"] >= ronaldo[0]["quantidade"]) {
+			if (jsonzao[0]["porcentPromo"] != "NULL") {
+				console.log(jsonzao[0]["porcentPromo"])  // return vira uma variável retornando o valor
+			}
+			else if (jsonzao[0]["quantidadeBonus"] != "NULL") {
+				console.log("R$" + jsonzao[0]["quantidadeBonus"])
+			}
+		}
+	}
+	else {
+		console.log("Promoção não aplicada")
+	}
 		}
 	});	
 }
