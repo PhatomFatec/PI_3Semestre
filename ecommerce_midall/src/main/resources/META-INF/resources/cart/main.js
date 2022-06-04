@@ -33,9 +33,9 @@ function funcaoSalvar() {
 			$("input[type='checkbox']").each(function(i) {
 				if (this.checked) {
 					checked.push(parseInt($(this).val()));
-					let x = verificarPromocaoCategoria(i);
-					x = x.replace('R$ ', '')
-					x = parseInt(x)
+					//let x = verificarPromocaoProduto(i);
+					//x = x.replace('R$ ', '')
+					//x = parseInt(x)
 					items.push(`
 					<tr id="jorge${i}"><td><span>${data[i]["codProd"]} </td></span> 
 					<td><span id="nomeRow$" class="rowNome"> ${data[i]["nomeProd"]} </td></span> 
@@ -47,8 +47,8 @@ function funcaoSalvar() {
   <div class="value-button" id="increase" onclick="increaseValue(${i})" value="Increase Value">+</div>
 </form>	</td></span> 
 					<td><span id="valorRow${i}" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
-					<td><span id="descontoRow${i}" class="rowValor"> ${verificarPromocaoCategoria(i)}  </td></span>
-					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"] - x}   </td></span>
+					<td><span id="descontoRow${i}" class="rowValor"> ${0}  </td></span>
+					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"]}   </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover(${i})" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
 					//console.log(" index  " + i + "  value  " + $(this).val());
@@ -164,18 +164,10 @@ function finalizarCompra() {
 }
  
 
-var jsonzao = [{
-	"nomeCampo": "eletronicos",
-	"nomePromo": "promocao celular",
-	"opcaoPromo": "Categoria",
-	"porcentPromo": "NULL",
-	"quantidadeBonus": 60,
-	"quantidadeMin": 4,
-	"tipoPromocao": "DESCONTO EM CATEGORIA"
-}]
 
 
-function verificarPromocaoCategoria(i){	
+
+function verificarPromocaoProduto(i){	
 	var retorno;
  $.ajax({
     url:    "http://localhost:8080/carrinho",
@@ -185,35 +177,101 @@ function verificarPromocaoCategoria(i){
     async: false,
 
     success: function( data ){
-        retorno = data;           
+        retorno = data;
+                   
+var jsonzao = [{    
+    "opcaoPromo": "Produto",
+    "nomeCampo": "LEITE INTEGRAL",
+    "tipoPromocao": "DESCONTO",
+    "porcentPromo": 50.0,
+    "quantidadeMinima": 1,
+    "quantidadeBonus": null,
+    "nomePromo": "Promocao legal leite integral"
+},
 
+{    
+    "opcaoPromo": "Produto",
+    "nomeCampo": "PAO",
+    "tipoPromocao": "DESCONTO POR QUANTIDADE",
+    "porcentPromo": 30.0,
+    "quantidadeMinima": 10,
+    "quantidadeBonus": null,
+    "nomePromo": "Promocao do pao"
+},
 
-	if (jsonzao[0]["nomeCampo"] == data[i]["categoria"]) {
-		if (data[i]["quantidade"] >= jsonzao[0]["quantidadeMin"]) {
-			console.log(data[i]["quantidade"])
-			console.log(document.getElementById('qntd'+i))	
-			if (jsonzao[0]["porcentPromo"] != "NULL") {
-				retorno =  jsonzao[0]["porcentPromo"];
+{    
+    "opcaoPromo": "Produto",
+    "nomeCampo": "CHOCOLATE",
+    "tipoPromocao": "QUANTIDADE BONUS",
+    "porcentPromo": null,
+    "quantidadeMinima": 2,
+    "quantidadeBonus": 1,
+    "nomePromo": "Promocao dos chocolates"
+},
+
+{    
+    "opcaoPromo": "Categoria",
+    "nomeCampo": "MODA",
+    "tipoPromocao": "DESCONTO",
+    "porcentPromo": 50.0,
+    "quantidadeMinima": null,
+    "quantidadeBonus": null,
+    "nomePromo": "Promocao da moda"
+},
+
+{    
+    "opcaoPromo": "Categoria",
+    "nomeCampo": "ELETRONICOS",
+    "tipoPromocao": "DESCONTO POR QUANTIDADE",
+    "porcentPromo": 20.0,
+    "quantidadeMinima": 2,
+    "quantidadeBonus": null,
+    "nomePromo": "Promocao para eletronicos"
+},
+
+{    
+    "opcaoPromo": "Categoria",
+    "nomeCampo": "MODA",
+    "tipoPromocao": "QUANTIDADE BONUS",
+    "porcentPromo": null,
+    "quantidadeMinima": 2,
+    "quantidadeBonus": 1,
+    "nomePromo": "Promocao moda compre um leve outro"
+},
+
+{    
+    "opcaoPromo": "Geral",
+    "nomeCampo": null,
+    "tipoPromocao": "DESCONTO",
+    "porcentPromo": 15.0,
+    "quantidadeMinima": 500, //Valor mínimo do carrinho
+    "quantidadeBonus": null,
+    "nomePromo": "Promoção geral total"
+}]
+		for(var j = 0;j<jsonzao.length;j++){
+		 if (jsonzao[j]["opcaoPromo"] == "Produto") {
+			 if (jsonzao[j]["nomeCampo"] == data[i]["nomeProd"]) {
+				 if (document.getElementById('qntd' + i).value >= jsonzao[j]["quantidadeMin"]) {
 					
-			}
-			else if (jsonzao[0]["quantidadeBonus"] != "NULL") {
-				 retorno = "R$ " + jsonzao[0]["quantidadeBonus"];
-				
-				
-			}
-		}else{
-			console.log("aqui 1")
-			retorno =  "R$ " + 0;
-		}
+					 if (jsonzao[j]["porcentPromo"] != "NULL") {
+						 let porcentagem = jsonzao[j]["porcentPromo"] / 100;
+						 retorno = "R$" + data[i]["valorProd"] * porcentagem
+					 }
+					 else if (jsonzao[j]["quantidadeBonus"] != "NULL") {
+						 retorno = "R$ " + jsonzao[j]["quantidadeBonus"];
+					 }
+				 } else {
+					 retorno = "R$ " + 0;
+				 }
+			 }
+			 else {
+				 retorno = "R$ " + 0;
+			 }
+		 }
+	 }
 	}
-	else {
-		console.log("aqui 2")
-		retorno =  "R$ " + 0;
-	}
-		
-    }
-});
-return retorno;
+ });
+	return retorno;
 }
 
 	
@@ -223,41 +281,17 @@ function increaseValue(i) {
 	value = isNaN(value) ? 1 : value;
 	value++;
 	var qnt = document.getElementById('qntd'+i).value = value;
-	if (qnt <= 0) {
-		alert("adcione ao menos um produto");
-		qnt = 1;
-	}
-	$.ajax({
-		url: "http://localhost:8080/cadastroProduto/"+(i+1),
-		async: false,
-		data: JSON.stringify(
-			{
-				"quantidade": qnt
-			}
-		),
-		type: 'PUT',
-		headers: {
-			Accept: 'application/json;charset=utf-8',
-			'Content-Type': 'application/json'
-		},
-		dataType: 'json'
-		
-	});
 
-
+	let testPromo = verificarPromocaoProduto(i);
+	
 	let y = document.getElementById('valorRow'+i).innerHTML
 	y = y.replace('R$ ', '')
 	y = parseInt(y)
-	let ddd = document.getElementById('descontoRow' + i).innerHTML
-	ddd = ddd.replace('R$ ', '')
-	ddd = parseInt(ddd)
-	let count = (y*=qnt)-ddd
-	document.getElementById("totRow"+i).innerHTML="R$" + count
-	
-	let testPromo = verificarPromocaoCategoria(i);
-	if(testPromo){
-		document.getElementById('descontoRow' + i).innerHTML = testPromo
-	}
+	testPromo = testPromo.replace('R$ ', '')
+	testPromo = parseInt(testPromo)
+	let count = (y*=qnt)-testPromo
+	document.getElementById('descontoRow' + i).innerHTML ="R$ "+ testPromo
+	document.getElementById("totRow"+i).innerHTML="R$ " + count
 }
 
 function decreaseValue(i) {
@@ -266,42 +300,21 @@ function decreaseValue(i) {
 	value--;
 	var qnt = document.getElementById('qntd'+i).value = value;
 	if (qnt <=0 ){
-		alert("adcione ao menos um produto");
-		qnt = 1;
+		funcaoRemover(i);
 	}
-	$.ajax({
-		url: "http://localhost:8080/cadastroProduto/"+(i+1),
-		async: false,
-		data: JSON.stringify(
-			{
-				"quantidade": qnt
-			}
-		),
-		type: 'PUT',
-		headers: {
-			Accept: 'application/json;charset=utf-8',
-			'Content-Type': 'application/json'
-		},
-		dataType: 'json'
-	});
+
+	let testPromo = verificarPromocaoProduto(i);
+	
 	let y = document.getElementById('valorRow'+i).innerHTML
 	y = y.replace('R$ ', '')
 	y = parseInt(y)
-	let ddd = document.getElementById('descontoRow' + i).innerHTML
-	ddd = ddd.replace('R$ ', '')
-	ddd = parseInt(ddd)
-	console.log(ddd)
-	let count = (y*=qnt)-ddd
-	document.getElementById("totRow"+i).innerHTML="R$" + count 
-	
-	let testPromo = verificarPromocaoCategoria(i);
-	if(testPromo){
-		document.getElementById('descontoRow' + i).innerHTML = testPromo
-	}
+	testPromo = testPromo.replace('R$ ', '')
+	testPromo = parseInt(testPromo)
+	let count = (y*=qnt)-testPromo
+	document.getElementById('descontoRow' + i).innerHTML ="R$ "+ testPromo
+	document.getElementById("totRow"+i).innerHTML="R$ " + count
+
 }
-
-
-
 function funcaoRemover(i) {
 	$("#jorge"+i).remove();
 }
