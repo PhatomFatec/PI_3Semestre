@@ -1,4 +1,5 @@
 //Ativa Modal ao clicar no botÃ£o "Cadastrar Produto"
+
 const openModal = () => document.getElementById('modal')
 	.classList.add('active')
 
@@ -13,7 +14,6 @@ document.getElementById('modalClose')
 
 //document.getElementById('btn-Cancelar')
 //.addEventListener('click', closeModal)
-
 
 
 function funcaoSalvar() {
@@ -33,7 +33,9 @@ function funcaoSalvar() {
 			$("input[type='checkbox']").each(function(i) {
 				if (this.checked) {
 					checked.push(parseInt($(this).val()));
-					verificarPromocaoCategoria(i)
+					let x = verificarPromocaoCategoria(i);
+					x = x.replace('R$ ', '')
+					x = parseInt(x)
 					items.push(`
 					<tr id="jorge${i}"><td><span>${data[i]["codProd"]} </td></span> 
 					<td><span id="nomeRow$" class="rowNome"> ${data[i]["nomeProd"]} </td></span> 
@@ -45,8 +47,8 @@ function funcaoSalvar() {
   <div class="value-button" id="increase" onclick="increaseValue(${i})" value="Increase Value">+</div>
 </form>	</td></span> 
 					<td><span id="valorRow${i}" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
-					<td><span id="descontoRow${i}" class="rowValor"> ${10}  </td></span>
-					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"]}   </td></span>
+					<td><span id="descontoRow${i}" class="rowValor"> ${verificarPromocaoCategoria(i)}  </td></span>
+					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"] - x}   </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover(${i})" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
 					//console.log(" index  " + i + "  value  " + $(this).val());
@@ -160,82 +162,63 @@ function finalizarCompra() {
 	});
 
 }
+ 
 
-
-function verificarPromocao() {
-
-	$.ajax({
-		type: "GET",
-		url: "http://localhost:8080/cadastroPromocao",
-		data: 'teste',
-		cache: false,
-		success: function(data) {
-			console.log('Get Realizado!')
-			console.log(data)
-			
-			if(data.length <= 0){
-				console.log("Promoção não aplicada");
-			}
-			else{
-				console.log("Promoção aplicada para o produto x")
-			}
-		}
-	});
-}
-function verificarPromocaoCategoria(i){
-	
-/*	$.ajax({
-		type: "GET",
-		url: "http://localhost:8080/cadastroPromocao",
-		data: 'teste',
-		cache: false,
-		success: function(data) {
-			console.log('Get Realizado - categoria!')
-			console.log(data)	
-		}
-	});	*/
-	
-	$.ajax({
-		type: "GET",
-		url: "http://localhost:8080/carrinho",
-		data: 'teste',
-		cache: false,
-		success: function(ronaldo) {
-			console.log('Get Realizado - categoria - carrinho!')
-			console.log(ronaldo)	
-			
-	var jsonzao = [{"nomeCampo": "eletronicos", 
+var jsonzao = [{
+	"nomeCampo": "eletronicos",
 	"nomePromo": "promocao celular",
-        "opcaoPromo": "Categoria", 
-        "porcentPromo": "NULL", 
-        "quantidadeBonus": 2000,
-        "quantidadeMin": 1, 
-        "tipoPromocao": "DESCONTO EM CATEGORIA"}]
-	console.log(jsonzao[0]["nomeCampo"])
-	
-	if (jsonzao[0]["nomeCampo"] == ronaldo[0]["categoria"]) {
-		if (jsonzao[0]["quantidadeMin"] >= ronaldo[0]["quantidade"]) {
+	"opcaoPromo": "Categoria",
+	"porcentPromo": "NULL",
+	"quantidadeBonus": 60,
+	"quantidadeMin": 4,
+	"tipoPromocao": "DESCONTO EM CATEGORIA"
+}]
+
+
+function verificarPromocaoCategoria(i){	
+	var retorno;
+ $.ajax({
+    url:    "http://localhost:8080/carrinho",
+    type:   "GET",
+    dataType:"json",
+    data:   "dado",
+    async: false,
+
+    success: function( data ){
+        retorno = data;           
+
+
+	if (jsonzao[0]["nomeCampo"] == data[i]["categoria"]) {
+		if (data[i]["quantidade"] >= jsonzao[0]["quantidadeMin"]) {
+			console.log(data[i]["quantidade"])
+			console.log(document.getElementById('qntd'+i))	
 			if (jsonzao[0]["porcentPromo"] != "NULL") {
-				console.log(jsonzao[0]["porcentPromo"])  // return vira uma variável retornando o valor
+				retorno =  jsonzao[0]["porcentPromo"];
+					
 			}
 			else if (jsonzao[0]["quantidadeBonus"] != "NULL") {
-				console.log("R$" + jsonzao[0]["quantidadeBonus"])
+				 retorno = "R$ " + jsonzao[0]["quantidadeBonus"];
+				
+				
 			}
+		}else{
+			console.log("aqui 1")
+			retorno =  "R$ " + 0;
 		}
 	}
 	else {
-		console.log("Promoção não aplicada")
+		console.log("aqui 2")
+		retorno =  "R$ " + 0;
 	}
-		}
-	});	
+		
+    }
+});
+return retorno;
 }
 
 	
 
-
-
 function increaseValue(i) {
-
 	var value = parseInt(document.getElementById('qntd'+i).value, 10);
 	value = isNaN(value) ? 1 : value;
 	value++;
@@ -258,25 +241,24 @@ function increaseValue(i) {
 			'Content-Type': 'application/json'
 		},
 		dataType: 'json'
+		
 	});
+
+
 	let y = document.getElementById('valorRow'+i).innerHTML
-	let z = document.getElementById("descontoRow"+i).innerHTML
-	z = z.replace('R$ ', '')
-	z = parseInt(z)
 	y = y.replace('R$ ', '')
 	y = parseInt(y)
-	let count = y*=qnt 	
+	let ddd = document.getElementById('descontoRow' + i).innerHTML
+	ddd = ddd.replace('R$ ', '')
+	ddd = parseInt(ddd)
+	let count = (y*=qnt)-ddd
 	document.getElementById("totRow"+i).innerHTML="R$" + count
-	if(qnt == 5){
-		alert("Promoção de 20% de desconto aplicada")
-	}
 	
-	if(qnt >= 5 && qnt <= 10){
-		document.getElementById("totRow"+i).innerHTML="R$" + (count - (count*0.2)- z)
+	let testPromo = verificarPromocaoCategoria(i);
+	if(testPromo){
+		document.getElementById('descontoRow' + i).innerHTML = testPromo
 	}
-	verificarPromocao();
 }
-
 
 function decreaseValue(i) {
 	var value = parseInt(document.getElementById('qntd'+i).value, 10);
@@ -305,17 +287,17 @@ function decreaseValue(i) {
 	let y = document.getElementById('valorRow'+i).innerHTML
 	y = y.replace('R$ ', '')
 	y = parseInt(y)
-	let count = y*=qnt 	
+	let ddd = document.getElementById('descontoRow' + i).innerHTML
+	ddd = ddd.replace('R$ ', '')
+	ddd = parseInt(ddd)
+	console.log(ddd)
+	let count = (y*=qnt)-ddd
 	document.getElementById("totRow"+i).innerHTML="R$" + count 
 	
-	if(qnt == 5){
-		alert("Promoção de 20% de desconto aplicada")
+	let testPromo = verificarPromocaoCategoria(i);
+	if(testPromo){
+		document.getElementById('descontoRow' + i).innerHTML = testPromo
 	}
-	
-	if(qnt >= 5 && qnt <= 10){
-		document.getElementById("totRow"+i).innerHTML="R$" + (count - (count*0.2)) 
-	}
-
 }
 
 
