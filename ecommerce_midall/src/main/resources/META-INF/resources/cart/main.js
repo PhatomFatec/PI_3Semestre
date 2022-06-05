@@ -29,13 +29,10 @@ function funcaoSalvar() {
 			var items = [];
 			var checked = [];
 
-
 			$("input[type='checkbox']").each(function(i) {
 				if (this.checked) {
 					checked.push(parseInt($(this).val()));
-					//let x = verificarPromocaoProduto(i);
-					//x = x.replace('R$ ', '')
-					//x = parseInt(x)
+
 					items.push(`
 					<tr id="jorge${i}"><td><span>${data[i]["codProd"]} </td></span> 
 					<td><span id="nomeRow$" class="rowNome"> ${data[i]["nomeProd"]} </td></span> 
@@ -43,24 +40,42 @@ function funcaoSalvar() {
 					<td><span id="catRow$" class="rowCat"> ${data[i]["categoria"]} </td></span> 
 					<td><form>
   <div class="value-button" id="decrease" onclick="decreaseValue(${i})" value="Decrease Value">-</div>
-  <input type="text" size="5" id="qntd${i}" value="${data[i]["quantidade"]}" readonly="true"/>
+  <input type="text" size="5" id="qntd${i}" value="${1}" readonly="true"/>
   <div class="value-button" id="increase" onclick="increaseValue(${i})" value="Increase Value">+</div>
 </form>	</td></span> 
 					<td><span id="valorRow${i}" class="rowValor">R$ ${data[i]["valorProd"]}  </td></span>
-					<td><span id="descontoRow${i}" class="rowValor"> ${0}  </td></span>
-					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * data[i]["quantidade"]}   </td></span>
+					<td><span id="descontoRow${i}" class="rowValor">R$ 0 </td></span>
+					<td><span id="totRow${i}" class="rowTotal" > R$ ${data[i]["valorProd"] * 1}   </td></span>
 					<td><button type="button" class="button red" onclick="funcaoRemover(${i})" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
 					//console.log(" index  " + i + "  value  " + $(this).val());
 
 				}
+
 			});
 
 			if (items.length >= 1) {
 				$("#cleiton").append(items);
-				items = [];
-				checkboxes = [];
+				for (var c = 0; c < data.length; c++) {
+					let desc = verificarPromocaoProduto(c);
+					console.log(c)
+					console.log(document.getElementById('qntd'+ c))
+					desc = desc.replace('R$ ', '')
+					desc = parseInt(desc)
+					if (desc >	0) {
+						let y = document.getElementById('valorRow' + c).innerHTML
+						y = y.replace('R$ ', '')
+						y = parseInt(y)
 
+						document.getElementById('descontoRow' + c).innerHTML = "R$" + desc
+						document.getElementById('totRow' + c).innerHTML = "R$" + (y - desc)
+					}
+					else{
+						console.log("aquiii")
+					}
+				}
+				items = [];
+				checked = [];
 			}
 			else if (items.length <= 0) {
 				alert("Escolha ao menos um item !!")
@@ -163,27 +178,11 @@ function finalizarCompra() {
 
 }
  
-
-
-
-
-function verificarPromocaoProduto(i){	
-	var retorno;
- $.ajax({
-    url:    "http://localhost:8080/carrinho",
-    type:   "GET",
-    dataType:"json",
-    data:   "dado",
-    async: false,
-
-    success: function( data ){
-        retorno = data;
-                   
 var jsonzao = [{    
     "opcaoPromo": "Produto",
     "nomeCampo": "LEITE INTEGRAL",
     "tipoPromocao": "DESCONTO",
-    "porcentPromo": 50.0,
+    "porcentPromo": 50,
     "quantidadeMinima": 1,
     "quantidadeBonus": null,
     "nomePromo": "Promocao legal leite integral"
@@ -193,8 +192,8 @@ var jsonzao = [{
     "opcaoPromo": "Produto",
     "nomeCampo": "PAO",
     "tipoPromocao": "DESCONTO POR QUANTIDADE",
-    "porcentPromo": 30.0,
-    "quantidadeMinima": 10,
+    "porcentPromo": 30,
+    "quantidadeMinima": 1,
     "quantidadeBonus": null,
     "nomePromo": "Promocao do pao"
 },
@@ -248,17 +247,31 @@ var jsonzao = [{
     "quantidadeBonus": null,
     "nomePromo": "Promoção geral total"
 }]
-		for(var j = 0;j<jsonzao.length;j++){
-		 if (jsonzao[j]["opcaoPromo"] == "Produto") {
-			 if (jsonzao[j]["nomeCampo"] == data[i]["nomeProd"]) {
-				 if (document.getElementById('qntd' + i).value >= jsonzao[j]["quantidadeMin"]) {
-					
-					 if (jsonzao[j]["porcentPromo"] != "NULL") {
-						 let porcentagem = jsonzao[j]["porcentPromo"] / 100;
-						 retorno = "R$" + data[i]["valorProd"] * porcentagem
+
+
+function verificarPromocaoProduto(i){
+	
+	var retorno;
+ $.ajax({
+    url:    "http://localhost:8080/carrinho",
+    type:   "GET",
+    dataType:"json",
+    data:   "dado",
+    async: false,
+	
+    success: function( data ){
+        retorno = data;         		
+		 if (jsonzao[1]["opcaoPromo"] == "Produto") {
+			 if (jsonzao[1]["nomeCampo"] == data[i]["nomeProd"]) {
+				let test = parseInt(document.getElementById('qntd' + i).value)
+				 if (test >= jsonzao[1]["quantidadeMinima"]) {
+					 if (jsonzao[1]["porcentPromo"] != null) {
+						 let porcentagem = jsonzao[1]["porcentPromo"] / 100;
+						 let newValue = "R$ " + (data[i]["valorProd"] * porcentagem)*document.getElementById('qntd' + i).value;
+						 retorno = newValue;
 					 }
-					 else if (jsonzao[j]["quantidadeBonus"] != "NULL") {
-						 retorno = "R$ " + jsonzao[j]["quantidadeBonus"];
+					 else if (jsonzao[1]["quantidadeBonus"] != null) {
+						 retorno = "R$ " + (jsonzao[1]["quantidadeBonus"] * data[i]["valorProd"]);
 					 }
 				 } else {
 					 retorno = "R$ " + 0;
@@ -269,20 +282,57 @@ var jsonzao = [{
 			 }
 		 }
 	 }
-	}
+	
  });
 	return retorno;
 }
 
-	
+function verificarPromocaoCategoria(i){	
+	var retorno;
+ $.ajax({
+    url:    "http://localhost:8080/carrinho",
+    type:   "GET",
+    dataType:"json",
+    data:   "dado",
+    async: false,
+
+    success: function( data ){
+        retorno = data;
+        let contador = 0;
+		 if (jsonzao[0]["opcaoPromo"] == "Categoria") {
+			contador += 1;
+			console.log(contador)
+			 if (jsonzao[4]["nomeCampo"] == data[i]["nomeProd"]) {
+				 if (2 >= jsonzao[4]["quantidadeMinima"]) {
+					 if (jsonzao[4]["porcentPromo"] != null) {
+						 let porcentagem = jsonzao[4]["porcentPromo"] / 100;
+						 let newValue = "R$ " + (data[i]["valorProd"] * porcentagem)*document.getElementById('qntd' + i).value;
+						 retorno = newValue;
+					 }
+					 else if (jsonzao[0]["quantidadeBonus"] != null) {
+						 retorno = "R$ " + (jsonzao[4]["quantidadeBonus"] * data[i]["valorProd"]);
+					 }
+				 } else {
+					 retorno = "R$ " + 0;
+				 }
+			 }
+			 else {
+				 retorno = "R$ " + 0;
+			 }
+		 }
+	 }
+ });
+	return retorno;
+}
 
 function increaseValue(i) {
 	var value = parseInt(document.getElementById('qntd'+i).value, 10);
 	value = isNaN(value) ? 1 : value;
 	value++;
 	var qnt = document.getElementById('qntd'+i).value = value;
-
+	let testPromoCat = verificarPromocaoCategoria(i);
 	let testPromo = verificarPromocaoProduto(i);
+	
 	
 	let y = document.getElementById('valorRow'+i).innerHTML
 	y = y.replace('R$ ', '')
