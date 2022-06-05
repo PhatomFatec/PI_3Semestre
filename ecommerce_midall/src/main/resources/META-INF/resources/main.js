@@ -26,9 +26,9 @@
 		 let codigoProduto = document.getElementById('modal-codigo').value;
 		 let nomeProduto = document.getElementById('modal-nome').value;
 		 let descProduto = document.getElementById('modal-desc').value;
-		 let categoriaProduto = document.getElementById('modal-categoria').value;
+		 let categoriaProduto =  $('#modal-categoria').val()
 		 let precoProduto = document.getElementById('modal-preco').value;
-		let statusProduto = document.getElementById('modal-status').value;
+		 let statusProduto = document.getElementById('modal-status').value;
 	 
 		  $(document).ready(function() {
 	 
@@ -43,8 +43,7 @@
 						 "descProd": descProduto,
 						 "categoria": categoriaProduto,
 						 "valorProd": precoProduto,
-						"statusProd": statusProduto,
-						"quantidade": 1
+						"statusProd": statusProduto
 					 }
 				 ),
 				 type: 'POST',
@@ -56,7 +55,8 @@
 			 });
 			 alert("Inserção Realizada!")
 		 }); 
-	 
+	
+	 	console.log(categoriaProduto)
 	 
 	 }
 	 
