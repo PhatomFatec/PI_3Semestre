@@ -56,10 +56,11 @@ function funcaoSalvar() {
 
 			if (items.length >= 1) {
 				$("#cleiton").append(items);
+				$("div").remove("#cartvazio");
 				for (var c = 0; c < data.length; c++) {
+					let descCat = verificarPromocaoCategoria(c);
 					let desc = verificarPromocaoProduto(c);
-					console.log(c)
-					console.log(document.getElementById('qntd'+ c))
+					console.log(descCat)
 					desc = desc.replace('R$ ', '')
 					desc = parseInt(desc)
 					if (desc >	0) {
@@ -69,9 +70,6 @@ function funcaoSalvar() {
 
 						document.getElementById('descontoRow' + c).innerHTML = "R$" + desc
 						document.getElementById('totRow' + c).innerHTML = "R$" + (y - desc)
-					}
-					else{
-						console.log("aquiii")
 					}
 				}
 				items = [];
@@ -89,6 +87,7 @@ function funcaoSalvar() {
 
 
 function listarProduto() {
+	
 
 	$.ajax({
 		type: "GET",
@@ -178,79 +177,27 @@ function finalizarCompra() {
 
 }
  
-var jsonzao = [{    
-    "opcaoPromo": "Produto",
-    "nomeCampo": "LEITE INTEGRAL",
-    "tipoPromocao": "DESCONTO",
-    "porcentPromo": 50,
-    "quantidadeMinima": 1,
-    "quantidadeBonus": null,
-    "nomePromo": "Promocao legal leite integral"
-},
+function getPromo() {
 
-{    
-    "opcaoPromo": "Produto",
-    "nomeCampo": "PAO",
-    "tipoPromocao": "DESCONTO POR QUANTIDADE",
-    "porcentPromo": 30,
-    "quantidadeMinima": 1,
-    "quantidadeBonus": null,
-    "nomePromo": "Promocao do pao"
-},
+	var retorno2 = [];
+	$.ajax({
+		url: "http://localhost:8080/cadastroPromocao",
+		type: "GET",
+		dataType: "json",
+		data: "dado",
+		async: false,
 
-{    
-    "opcaoPromo": "Produto",
-    "nomeCampo": "CHOCOLATE",
-    "tipoPromocao": "QUANTIDADE BONUS",
-    "porcentPromo": null,
-    "quantidadeMinima": 2,
-    "quantidadeBonus": 1,
-    "nomePromo": "Promocao dos chocolates"
-},
+		success: function(data) {
+			retorno2 = data;
+			
+		}
 
-{    
-    "opcaoPromo": "Categoria",
-    "nomeCampo": "MODA",
-    "tipoPromocao": "DESCONTO",
-    "porcentPromo": 50.0,
-    "quantidadeMinima": null,
-    "quantidadeBonus": null,
-    "nomePromo": "Promocao da moda"
-},
-
-{    
-    "opcaoPromo": "Categoria",
-    "nomeCampo": "ELETRONICOS",
-    "tipoPromocao": "DESCONTO POR QUANTIDADE",
-    "porcentPromo": 20.0,
-    "quantidadeMinima": 2,
-    "quantidadeBonus": null,
-    "nomePromo": "Promocao para eletronicos"
-},
-
-{    
-    "opcaoPromo": "Categoria",
-    "nomeCampo": "MODA",
-    "tipoPromocao": "QUANTIDADE BONUS",
-    "porcentPromo": null,
-    "quantidadeMinima": 2,
-    "quantidadeBonus": 1,
-    "nomePromo": "Promocao moda compre um leve outro"
-},
-
-{    
-    "opcaoPromo": "Geral",
-    "nomeCampo": null,
-    "tipoPromocao": "DESCONTO",
-    "porcentPromo": 15.0,
-    "quantidadeMinima": 500, //Valor mínimo do carrinho
-    "quantidadeBonus": null,
-    "nomePromo": "Promoção geral total"
-}]
-
+	});
+	return retorno2;
+}
+var jsonzao = getPromo();
 
 function verificarPromocaoProduto(i){
-	
 	var retorno;
  $.ajax({
     url:    "http://localhost:8080/carrinho",
@@ -260,25 +207,30 @@ function verificarPromocaoProduto(i){
     async: false,
 	
     success: function( data ){
-        retorno = data;         		
-		 if (jsonzao[1]["opcaoPromo"] == "Produto") {
-			 if (jsonzao[1]["nomeCampo"] == data[i]["nomeProd"]) {
+        retorno = data; 
+
+		 if (jsonzao[i]["opcaoPromo"] == "produto") {
+			 if (jsonzao[i]["nomeCampo"] == data[i]["nomeProd"]) {
 				let test = parseInt(document.getElementById('qntd' + i).value)
-				 if (test >= jsonzao[1]["quantidadeMinima"]) {
-					 if (jsonzao[1]["porcentPromo"] != null) {
-						 let porcentagem = jsonzao[1]["porcentPromo"] / 100;
+				 if (test >= jsonzao[i]["quantidadeMin"]) {
+					 if (jsonzao[i]["porcentPromo"] != null) {
+						 let porcentagem = jsonzao[i]["porcentPromo"] / 100;
 						 let newValue = "R$ " + (data[i]["valorProd"] * porcentagem)*document.getElementById('qntd' + i).value;
 						 retorno = newValue;
+					
 					 }
-					 else if (jsonzao[1]["quantidadeBonus"] != null) {
-						 retorno = "R$ " + (jsonzao[1]["quantidadeBonus"] * data[i]["valorProd"]);
+					 else if (jsonzao[i]["quantidadeBonus"] != null) {
+						 retorno = "R$ " + (jsonzao[i]["quantidadeBonus"] * data[i]["valorProd"]);
+						  
 					 }
 				 } else {
 					 retorno = "R$ " + 0;
+					 
 				 }
 			 }
 			 else {
 				 retorno = "R$ " + 0;
+				  
 			 }
 		 }
 	 }
@@ -298,14 +250,14 @@ function verificarPromocaoCategoria(i){
 
     success: function( data ){
         retorno = data;
+        
         let contador = 0;
-		 if (jsonzao[0]["opcaoPromo"] == "Categoria") {
+		 if (jsonzao[i]["opcaoPromo"] == "categoria") {
 			contador += 1;
-			console.log(contador)
-			 if (jsonzao[4]["nomeCampo"] == data[i]["nomeProd"]) {
-				 if (2 >= jsonzao[4]["quantidadeMinima"]) {
+			 if (jsonzao[i]["nomeCampo"] == data[i]["nomeProd"]) {
+				 if (contador >= jsonzao[i]["quantidadeMin"]) {
 					 if (jsonzao[4]["porcentPromo"] != null) {
-						 let porcentagem = jsonzao[4]["porcentPromo"] / 100;
+						 let porcentagem = jsonzao[i]["porcentPromo"] / 100;
 						 let newValue = "R$ " + (data[i]["valorProd"] * porcentagem)*document.getElementById('qntd' + i).value;
 						 retorno = newValue;
 					 }
@@ -331,8 +283,9 @@ function increaseValue(i) {
 	value++;
 	var qnt = document.getElementById('qntd'+i).value = value;
 	let testPromoCat = verificarPromocaoCategoria(i);
+	console.log(testPromoCat)
 	let testPromo = verificarPromocaoProduto(i);
-	
+	console.log(testPromo)
 	
 	let y = document.getElementById('valorRow'+i).innerHTML
 	y = y.replace('R$ ', '')
