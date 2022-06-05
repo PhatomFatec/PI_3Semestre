@@ -62,7 +62,7 @@
         <table class="records" id="linha1">
             <thead>
                 <tr>
-                    <th style="width:250px">&nbsp;1. &nbsp;&nbsp;Aplicar desconto em:</th>
+                    <th style="width:250px">&nbsp;&nbsp;&nbsp;Aplicar desconto em:</th>
                     <th style="width:350px">
                         <select class="modal-field" name="lstProduto" id="lstProduto"> 
                             <option value="null"></option> 
@@ -79,7 +79,7 @@
         <table class="records" id="linha2">
             <thead>
                 <tr>
-                    <th class="light" style="width:250px">&nbsp;2. &nbsp;&nbsp;Selecionar<span id="btn-selected-listar"></span></th>
+                    <th class="light" style="width:250px">&nbsp;&nbsp;&nbsp;Selecionar<span id="btn-selected-listar"></span></th>
                     <th class="light" style="width:350px">
                         <select class="modal-field" id="optionSelected">
                             <option></option>
@@ -88,23 +88,34 @@
                 </tr>
             </thead>
         </table>      
+        
+        
+        <!-- 3 -->
+        <table class="records" id="linha3">
+            <thead>
+                <tr>
+                    <th style="width:250px">&nbsp;&nbsp;&nbsp;Tipo Promoção:</th>
+                    <th style="width:350px">
+                        <select class="modal-field" name="porcentagem" id="tipo-promocao" onclick="verificaTipoPromocao()" >
+                            <option value="null"></option>
+                            <option value="desconto">Desconto</option>
+                            <option value="desconto-quantidade">Desconto por quantidade</option>
+                            <option value="quantidade-bonus">Quantidade Bônus</option>
+                        </select>&nbsp;
+                    </th>
+                </tr>
+            </thead>
+        </table>    
 
-    		 <!-- 3 -->
-             <table class="records" id="linha3">
-                <thead>
-                    <tr>
-                        <th style="width:250px">&nbsp;3. &nbsp;&nbsp;Tipo Promoção:</th>
-                        <th style="width:350px">
-                            <select class="modal-field" name="porcentagem" id="tipo-promocao" onclick="verificaTipoPromocao()" >
-                                <option value="null"></option>
-                                <option value="desconto">Desconto</option>
-                                <option value="desconto-quantidade">Desconto por quantidade</option>
-                                <option value="quantidade-bonus">Quantidade Bônus</option>
-                            </select>&nbsp;
-                        </th>
-                    </tr>
-                </thead>
-            </table>    
+        <!-- 7 -->
+       <table class="records" id="linha7">
+           <thead>
+               <tr>
+                   <th style="width:250px">&nbsp;&nbsp;&nbsp;Nome da promoção:</th>
+                   <th style="width:350px"><input class="modal-field" type="text" id="nome-promocao">&nbsp;</th>
+               </tr>
+           </thead>
+       </table>
         
 		 <!-- 4 -->
         <table class="records" id="promocao-porcentagem" style="visibility: hidden;">
@@ -132,7 +143,7 @@
         <table class="records" id="promocao-compre" style="visibility: hidden;">
             <thead>
                 <tr>
-                    <th style="width:250px">&nbsp;5. &nbsp;&nbsp;Compre:</th>
+                    <th style="width:250px">&nbsp;&nbsp;&nbsp;Compre:</th>
                     <th style="width:350px">
 						<input type="number" class="modal-field" id="quantidade-minima" name="quantity" min="1" max="5">
                     </th>
@@ -145,7 +156,7 @@
         <table class="records" id="promocao-ganhe" style="visibility: hidden;" >
             <thead>
                 <tr>
-                    <th class="light" style="width:250px" >&nbsp;6. &nbsp;&nbsp;Ganhe:</th>
+                    <th class="light" style="width:250px" >&nbsp;&nbsp;&nbsp;Ganhe:</th>
                     <th class="light" style="width:350px">
                         <input type="number" class="modal-field" id="quantidade-bonus" name="quantity" min="1" max="5">
                     </th>   
@@ -153,15 +164,6 @@
             </thead>
         </table>
 
-		 <!-- 7 -->
-        <table class="records" id="linha7">
-            <thead>
-                <tr>
-                    <th style="width:250px">&nbsp;7. &nbsp;&nbsp;Nome da promoção:</th>
-                    <th style="width:350px"><input class="modal-field" type="text" id="nome-promocao">&nbsp;</th>
-                </tr>
-            </thead>
-        </table>
         
         <button id="btn-cadastrarPromocao" onclick="cadastrarPromocao()" class="button blue mobile" style="margin: auto; width:135px;">Cadastrar</button> <br>
 

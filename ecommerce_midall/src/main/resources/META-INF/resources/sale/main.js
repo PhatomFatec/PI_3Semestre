@@ -75,6 +75,7 @@ function cadastrarPromocao(){
     let opcaoCampo = document.getElementById("optionSelected");
     let nomeCampo = opcaoCampo.options[opcaoCampo.selectedIndex].value;
 
+
 	//Tipo Promocao (desconto, desconto por quantidade)
 	var select = document.getElementById("tipo-promocao");    
 	var tipoPromocao = select.options[select.selectedIndex].text;
@@ -104,6 +105,11 @@ function cadastrarPromocao(){
 	console.log('Nome Promoção:', nomePromocao)
 
 
+	if (valorPorcentagem == 'null' | valorPorcentagem == 'undefined') {
+		valorPorcentagem = 0
+		console.log('converteu')
+	}
+
  	 $(document).ready(function() {
 
 		$.ajax({
@@ -111,8 +117,9 @@ function cadastrarPromocao(){
 			async: false,
 			data: JSON.stringify(
 				{
+					"id": 0,
 					"opcaoPromo": opcaoPromo,
-					"nomeCampo": nomeCampo,
+					"nomeCampo": nomeCampo.toUpperCase(),
 					"tipoPromocao": tipoPromocao,
 					"porcentPromo": valorPorcentagem,
 					"quantidadeBonus": qntdBonus,
