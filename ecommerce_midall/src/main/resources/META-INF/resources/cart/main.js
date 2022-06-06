@@ -347,7 +347,7 @@ function decreaseValue(i) {
 	document.getElementById('descontoRow' + i).innerHTML ="R$ "+ testPromo
 	document.getElementById("totRow"+i).innerHTML="R$ " + count
 	document.getElementById('span-precoDesconto').innerHTML = "R$ " + testPromo
-	document.getElementById('span-precoTotal').innerHTML = "R$" + valores + count
+	document.getElementById('span-precoTotal').innerHTML = "R$" + valores
 }
 function funcaoRemover(i) {
 	$("#jorge"+i).remove();
