@@ -63,6 +63,9 @@ var listarProdutos = function() {
 	}
 	});
 }
+function reload(){
+	location.reload();
+}
         
 
 function cadastrarPromocao(){

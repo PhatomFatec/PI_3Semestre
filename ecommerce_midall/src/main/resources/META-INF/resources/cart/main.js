@@ -15,6 +15,7 @@ document.getElementById('modalClose')
 //document.getElementById('btn-Cancelar')
 //.addEventListener('click', closeModal)
 var valores = 0;
+var conterr = 5;
 function funcaoSalvar() {
 
 	$.ajax({
@@ -57,9 +58,8 @@ function funcaoSalvar() {
 				$("div").remove("#cartvazio");
 				for (var c = 0; c < data.length; c++) {
 					let desc = verificarPromocaoProduto(c);
-					desc = desc.replace('R$ ', '')
-					desc = parseInt(desc)
-					let d = document.getElementById('totRow0').innerHTML
+					//desc = desc.replace('R$ ', '')
+					//desc = parseInt(desc)
 					document.getElementById('span-precoDesconto').innerHTML = "R$ " + desc
 					document.getElementById('span-precoTotal').innerHTML = "R$" + valores
 					if (desc >	0) {
@@ -83,6 +83,9 @@ function funcaoSalvar() {
 	});
 }
 
+function reload(){
+	location.reload();
+}
 
 
 function listarProduto() {
@@ -194,27 +197,7 @@ function getPromo() {
 	});
 	return retorno2;
 }
-var jsonzao = [
-  {
-    "id": 2,
-    "nomeCampo": "QUEIJO",
-    "nomePromo": "dfsdfsdf",
-    "opcaoPromo": "produto",
-    "porcentPromo": 50.0,
-    "quantidadeMin": 4,
-    "tipoPromocao": "Desconto por quantidade"
-  },
-  {
-    "id": 4,
-    "nomeCampo": "FEIJAO",
-    "nomePromo": "rr",
-    "opcaoPromo": "produto",
-    "porcentPromo": 0.0,
-    "quantidadeBonus": 1,
-    "quantidadeMin": 5,
-    "tipoPromocao": "Quantidade Bônus"
-  }
-];
+
 function verificarCarrinho(){
 	var retorno;
 	$.ajax({
@@ -236,36 +219,41 @@ function verificarCarrinho(){
 function verificarPromocaoProduto(i){
  
         let x = verificarCarrinho();
-		for(var j = 0; j<jsonzao.length;j++){
-			for(var g = 0; g<x.length;g++){		
-		 if (jsonzao[j]["opcaoPromo"] == "produto") {			
-			 if (jsonzao[i]["nomeCampo"] == x[g]["nomeProd"].toUpperCase()) {
+        let y = getPromo();
+		//for(var j = 0; j<jsonzao.length;j++){
+			//for(var g = 0; g<x.length;g++){
+				console.log(i)
+				console.log(x[1])		
+		 if (y[i]["opcaoPromo"] == "produto") {			
+			 if (y[i]["nomeCampo"] == x[i]["nomeProd"].toUpperCase()) {
 				let test = parseInt(document.getElementById('qntd' + i).value)
-				 if (test >= jsonzao[j]["quantidadeMin"]) {	
-					 if (jsonzao[j]["porcentPromo"] != 0.0) {
-						 let porcentagem = jsonzao[j]["porcentPromo"] / 100;
-						 let newValue = "R$ " + (x[g]["valorProd"] * porcentagem)*document.getElementById('qntd' + i).value;
+				 if (test >= y[i]["quantidadeMin"]) {	
+					 if (y[i]["porcentPromo"] != 0.0) {
+						 let porcentagem = y[i]["porcentPromo"] / 100;
+						 conterr+=(x[i]["valorProd"] * porcentagem)
+						 let newValue =  (x[i]["valorProd"] * porcentagem)*document.getElementById('qntd' + i).value;
 						 return  newValue;
 					
 					 }
-					 else if (jsonzao[j]["quantidadeBonus"] != 0.0) {
-						 return  "R$ " + (jsonzao[j]["quantidadeBonus"] * x[g]["valorProd"]);
+					 else if (y[i]["quantidadeBonus"] != 0.0) {
+						conterr += (y[i]["quantidadeBonus"] * x[i]["valorProd"])
+						 return (y[i]["quantidadeBonus"] * x[i]["valorProd"]);
 						  
 					 }
 				 } else {
 					console.log("aqui 2")
-					 return  "R$ " + 0;
+					 return  0;
 					 
 				 }
 			 }
 			 else {
 				console.log("aqui 1")
-				 return  "R$ " + 0;
+				 return  0;
 				  
 			 }
 		 }
-		 }
-		 }
+		// }
+		 //}
 
 }
 
@@ -318,13 +306,14 @@ function increaseValue(i) {
 	let y = document.getElementById('valorRow'+i).innerHTML
 	y = y.replace('R$ ', '')
 	y = parseInt(y)
-	testPromo = testPromo.replace('R$ ', '')
 	testPromo = parseInt(testPromo)
 	let count = (y*=qnt)-testPromo
+	console.log(conterr)
+
 	document.getElementById('descontoRow' + i).innerHTML ="R$ "+ testPromo
 	document.getElementById("totRow"+i).innerHTML="R$ " + count
-	document.getElementById('span-precoDesconto').innerHTML = "R$ " + testPromo
-	document.getElementById('span-precoTotal').innerHTML = "R$" + (valores + 20) 
+	document.getElementById('span-precoDesconto').innerHTML = "R$ " + conterr
+	document.getElementById('span-precoTotal').innerHTML = "R$ " + (valores - testPromo)
 }
 
 function decreaseValue(i) {
@@ -337,17 +326,16 @@ function decreaseValue(i) {
 	}
 
 	let testPromo = verificarPromocaoProduto(i);
-	
 	let y = document.getElementById('valorRow'+i).innerHTML
 	y = y.replace('R$ ', '')
 	y = parseInt(y)
-	testPromo = testPromo.replace('R$ ', '')
-	testPromo = parseInt(testPromo)
 	let count = (y*=qnt)-testPromo
 	document.getElementById('descontoRow' + i).innerHTML ="R$ "+ testPromo
 	document.getElementById("totRow"+i).innerHTML="R$ " + count
 	document.getElementById('span-precoDesconto').innerHTML = "R$ " + testPromo
-	document.getElementById('span-precoTotal').innerHTML = "R$" + valores
+	document.getElementById('span-precoTotal').innerHTML = "R$ " + (valores - testPromo)
+
+	
 }
 function funcaoRemover(i) {
 	$("#jorge"+i).remove();
