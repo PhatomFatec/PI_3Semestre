@@ -14,8 +14,7 @@ document.getElementById('modalClose')
 
 //document.getElementById('btn-Cancelar')
 //.addEventListener('click', closeModal)
-
-
+var valores = 0;
 function funcaoSalvar() {
 
 	$.ajax({
@@ -28,11 +27,10 @@ function funcaoSalvar() {
 			console.log(data)
 			var items = [];
 			var checked = [];
-
+			
 			$("input[type='checkbox']").each(function(i) {
 				if (this.checked) {
 					checked.push(parseInt($(this).val()));
-
 					items.push(`
 					<tr id="jorge${i}"><td><span>${data[i]["codProd"]} </td></span> 
 					<td><span id="nomeRow$" class="rowNome"> ${data[i]["nomeProd"]} </td></span> 
@@ -49,20 +47,21 @@ function funcaoSalvar() {
 					<td><button type="button" class="button red" onclick="funcaoRemover(${i})" id="btn-Remover$"><i class="material-icons">close</i></button></td></tr> 
 				`);
 					//console.log(" index  " + i + "  value  " + $(this).val());
-
+				valores+=data[i]["valorProd"]
 				}
-
+				
 			});
 
 			if (items.length >= 1) {
 				$("#cleiton").append(items);
 				$("div").remove("#cartvazio");
 				for (var c = 0; c < data.length; c++) {
-					let descCat = verificarPromocaoCategoria(c);
 					let desc = verificarPromocaoProduto(c);
-					console.log(descCat)
 					desc = desc.replace('R$ ', '')
 					desc = parseInt(desc)
+					let d = document.getElementById('totRow0').innerHTML
+					document.getElementById('span-precoDesconto').innerHTML = "R$ " + desc
+					document.getElementById('span-precoTotal').innerHTML = "R$" + valores
 					if (desc >	0) {
 						let y = document.getElementById('valorRow' + c).innerHTML
 						y = y.replace('R$ ', '')
@@ -195,11 +194,30 @@ function getPromo() {
 	});
 	return retorno2;
 }
-var jsonzao = getPromo();
-
-function verificarPromocaoProduto(i){
+var jsonzao = [
+  {
+    "id": 2,
+    "nomeCampo": "QUEIJO",
+    "nomePromo": "dfsdfsdf",
+    "opcaoPromo": "produto",
+    "porcentPromo": 50.0,
+    "quantidadeMin": 4,
+    "tipoPromocao": "Desconto por quantidade"
+  },
+  {
+    "id": 4,
+    "nomeCampo": "FEIJAO",
+    "nomePromo": "rr",
+    "opcaoPromo": "produto",
+    "porcentPromo": 0.0,
+    "quantidadeBonus": 1,
+    "quantidadeMin": 5,
+    "tipoPromocao": "Quantidade Bônus"
+  }
+];
+function verificarCarrinho(){
 	var retorno;
- $.ajax({
+	$.ajax({
     url:    "http://localhost:8080/carrinho",
     type:   "GET",
     dataType:"json",
@@ -207,36 +225,48 @@ function verificarPromocaoProduto(i){
     async: false,
 	
     success: function( data ){
-        retorno = data; 
+		retorno = data;
+	
+		 }
+	
+ });
+	return retorno;
+}
 
-		 if (jsonzao[i]["opcaoPromo"] == "produto") {
-			 if (jsonzao[i]["nomeCampo"] == data[i]["nomeProd"]) {
+function verificarPromocaoProduto(i){
+ 
+        let x = verificarCarrinho();
+		for(var j = 0; j<jsonzao.length;j++){
+			for(var g = 0; g<x.length;g++){		
+		 if (jsonzao[j]["opcaoPromo"] == "produto") {			
+			 if (jsonzao[i]["nomeCampo"] == x[g]["nomeProd"].toUpperCase()) {
 				let test = parseInt(document.getElementById('qntd' + i).value)
-				 if (test >= jsonzao[i]["quantidadeMin"]) {
-					 if (jsonzao[i]["porcentPromo"] != null) {
-						 let porcentagem = jsonzao[i]["porcentPromo"] / 100;
-						 let newValue = "R$ " + (data[i]["valorProd"] * porcentagem)*document.getElementById('qntd' + i).value;
-						 retorno = newValue;
+				 if (test >= jsonzao[j]["quantidadeMin"]) {	
+					 if (jsonzao[j]["porcentPromo"] != 0.0) {
+						 let porcentagem = jsonzao[j]["porcentPromo"] / 100;
+						 let newValue = "R$ " + (x[g]["valorProd"] * porcentagem)*document.getElementById('qntd' + i).value;
+						 return  newValue;
 					
 					 }
-					 else if (jsonzao[i]["quantidadeBonus"] != null) {
-						 retorno = "R$ " + (jsonzao[i]["quantidadeBonus"] * data[i]["valorProd"]);
+					 else if (jsonzao[j]["quantidadeBonus"] != 0.0) {
+						 return  "R$ " + (jsonzao[j]["quantidadeBonus"] * x[g]["valorProd"]);
 						  
 					 }
 				 } else {
-					 retorno = "R$ " + 0;
+					console.log("aqui 2")
+					 return  "R$ " + 0;
 					 
 				 }
 			 }
 			 else {
-				 retorno = "R$ " + 0;
+				console.log("aqui 1")
+				 return  "R$ " + 0;
 				  
 			 }
 		 }
-	 }
-	
- });
-	return retorno;
+		 }
+		 }
+
 }
 
 function verificarPromocaoCategoria(i){	
@@ -275,15 +305,13 @@ function verificarPromocaoCategoria(i){
 	 }
  });
 	return retorno;
-}
 
+}
 function increaseValue(i) {
 	var value = parseInt(document.getElementById('qntd'+i).value, 10);
 	value = isNaN(value) ? 1 : value;
 	value++;
 	var qnt = document.getElementById('qntd'+i).value = value;
-	let testPromoCat = verificarPromocaoCategoria(i);
-	console.log(testPromoCat)
 	let testPromo = verificarPromocaoProduto(i);
 	console.log(testPromo)
 	
@@ -295,6 +323,8 @@ function increaseValue(i) {
 	let count = (y*=qnt)-testPromo
 	document.getElementById('descontoRow' + i).innerHTML ="R$ "+ testPromo
 	document.getElementById("totRow"+i).innerHTML="R$ " + count
+	document.getElementById('span-precoDesconto').innerHTML = "R$ " + testPromo
+	document.getElementById('span-precoTotal').innerHTML = "R$" + (valores + 20) 
 }
 
 function decreaseValue(i) {
@@ -316,7 +346,8 @@ function decreaseValue(i) {
 	let count = (y*=qnt)-testPromo
 	document.getElementById('descontoRow' + i).innerHTML ="R$ "+ testPromo
 	document.getElementById("totRow"+i).innerHTML="R$ " + count
-
+	document.getElementById('span-precoDesconto').innerHTML = "R$ " + testPromo
+	document.getElementById('span-precoTotal').innerHTML = "R$" + valores + count
 }
 function funcaoRemover(i) {
 	$("#jorge"+i).remove();
