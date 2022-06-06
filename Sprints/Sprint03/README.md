@@ -36,7 +36,7 @@
 <br>
 
 ## 🎲 Banco de Dados: Modelo Conceitual / Lógico
-![image](https://media.discordapp.net/attachments/887890002741170176/975160640329121913/Capturar.PNG)
+![image](https://media.discordapp.net/attachments/913534866686103573/982693114307313774/modelagem.jpeg)
 
 <br>
 
