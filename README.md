@@ -73,9 +73,9 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
 
 - [x] [Sprint 01](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint01/README.md) ✔️
  
-- [ ] [Sprint 02](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint02/README.md) 🚧
+- [x] [Sprint 02](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint02/README.md) ✔️
  
-- [ ] [Sprint 03](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint03/README.md) ❌
+- [x] [Sprint 03](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint03/README.md) ✔️
   
 - [ ] [Sprint 04](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint04/README.md) ❌
  
@@ -108,8 +108,8 @@ Acesse o passo a passo de como executar o programa clicando [AQUI](https://githu
 |-----------------|----------|----------|--------|
 | **Kick off**    | 14/03/22 | 18/03/22 |   ✔️ Realizado      |
 | **Sprint 01**   | 25/03/22 | 17/04/22 |   ✔️ Realizado      |
-| **Sprint 02**   | 20/04/22 | 15/05/22 |   🚧 No Prazo  |
-| **Sprint 03**   | 16/05/22 | 05/06/22 |   ❌ Fora do Prazo  |
+| **Sprint 02**   | 20/04/22 | 15/05/22 |   ✔️ Realizado  |
+| **Sprint 03**   | 16/05/22 | 05/06/22 |   ✔️ Realizado  |
 | **Apresentação final** | 15/06/22 | 15/06/22 |   ❌ Fora do Prazo  |
 
 <br>
@@ -141,6 +141,6 @@ Acesse o passo a passo de como executar o programa clicando [AQUI](https://githu
 [<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/lara-leal-527b7020a/)
 [<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/lara-leal)
 
-* **DEV** - Lucas Monteiro  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/lucas-monteiro-56585117b/)
-[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>](https://github.com/LucasMonteiiroo)
+* **DEV** - Breno Gabriel Moura   &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+[<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white&color=black"/>](https://www.linkedin.com/in/breno-m-52a300141/)
+[<img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white&color=black"/>]([https://github.com/LucasMonteiiroo](https://github.com/Breno-Moura))
