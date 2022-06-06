@@ -73,9 +73,9 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
 
 - [x] [Sprint 01](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint01/README.md) ✔️
  
-- [ ] [Sprint 02](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint02/README.md) ✔️
+- [x] [Sprint 02](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint02/README.md) ✔️
  
-- [ ] [Sprint 03](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint03/README.md) ❌
+- [x] [Sprint 03](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint03/README.md) ✔️
   
 - [ ] [Sprint 04](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint04/README.md) ❌
  
@@ -109,7 +109,7 @@ Acesse o passo a passo de como executar o programa clicando [AQUI](https://githu
 | **Kick off**    | 14/03/22 | 18/03/22 |   ✔️ Realizado      |
 | **Sprint 01**   | 25/03/22 | 17/04/22 |   ✔️ Realizado      |
 | **Sprint 02**   | 20/04/22 | 15/05/22 |   ✔️ Realizado  |
-| **Sprint 03**   | 16/05/22 | 05/06/22 |   ❌ Fora do Prazo  |
+| **Sprint 03**   | 16/05/22 | 05/06/22 |   ✔️ Realizado  |
 | **Apresentação final** | 15/06/22 | 15/06/22 |   ❌ Fora do Prazo  |
 
 <br>
