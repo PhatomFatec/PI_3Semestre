@@ -77,7 +77,7 @@ Para mais informações sobre as entregas e sobre o conteúdo do projeto, veja c
  
 - [x] [Sprint 03](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint03/README.md) ✔️
   
-- [ ] [Sprint 04](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint04/README.md) ❌
+- [ ] [Sprint 04](https://github.com/PhatomFatec/PI_3Semestre/tree/main/Sprints/Sprint04/README.md) ✔️
  
 <br>
 
