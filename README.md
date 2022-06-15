@@ -110,7 +110,7 @@ Acesse o passo a passo de como executar o programa clicando [AQUI](https://githu
 | **Sprint 01**   | 25/03/22 | 17/04/22 |   ✔️ Realizado      |
 | **Sprint 02**   | 20/04/22 | 15/05/22 |   ✔️ Realizado  |
 | **Sprint 03**   | 16/05/22 | 05/06/22 |   ✔️ Realizado  |
-| **Apresentação final** | 15/06/22 | 15/06/22 |   ❌ Fora do Prazo  |
+| **Apresentação final** | 15/06/22 | 15/06/22 |   ✔️ Realizado  |
 
 <br>
 
